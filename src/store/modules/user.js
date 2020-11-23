@@ -1,7 +1,6 @@
-import { login, getInfo } from '@/api/user'
+import { login, logout, getInfo } from '@/api/user'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import { resetRouter } from '@/router'
-
 const getDefaultState = () => {
   return {
     token: getToken(),
@@ -67,26 +66,14 @@ const actions = {
   // user logout
   logout({ commit, state }) {
     return new Promise((resolve, reject) => {
-      // logout(state.token).then(() => {
-      //   removeToken() // must remove  token  first
-      //   resetRouter()
-      //   commit('RESET_STATE')
-      //   resolve()
-      // }).catch(error => {
-      //   reject(error)
-      // })
-      try {
-        commit('SET_TOKEN', '')
-        // commit('SET_ROLES', [])
-        removeToken()
+      logout(state.token).then(() => {
+        removeToken() // must remove  token  first
         resetRouter()
-        // reset visited views and cached views
-        // to fixed https://github.com/PanJiaChen/vue-element-admin/issues/2485
-        // dispatch('tagsView/delAllViews', null, { root: true })
+        commit('RESET_STATE')
         resolve()
-      } catch (e) {
-        reject(e)
-      }
+      }).catch(error => {
+        reject(error)
+      })
     })
   },
 
