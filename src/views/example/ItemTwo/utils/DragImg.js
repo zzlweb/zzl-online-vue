@@ -4,7 +4,7 @@ var Draggabilly = require('draggabilly')
 // const body = document.body
 let winsize
 const calcWinsize = () =>
-  (winsize = { width: window.innerWidth, height: window.innerHeight })
+  (winsize = { width: window.innerWidth - 260, height: window.innerHeight })
 calcWinsize()
 
 const MathUtils = {
@@ -63,7 +63,7 @@ class Strip {
     this.maxDrag =
       this.draggableWidth < winsize.width
         ? 0
-        : this.draggableWidth - winsize.width + 300
+        : this.draggableWidth - winsize.width
     // The current amount (in pixels) that was dragged
     this.dragPosition = 0
     // Initialize the Draggabilly

@@ -66,8 +66,8 @@ class CursorFx {
     )
 
     this.DOM.dot.style.transform = `translateX(${
-      this.lastMousePos.dot.x
-    }px) translateY(${this.lastMousePos.dot.y - 20}px)`
+      this.lastMousePos.dot.x - 260
+    }px) translateY(${this.lastMousePos.dot.y -270}px)`
     requestAnimationFrame(() => this.render())
   }
 
@@ -75,15 +75,12 @@ class CursorFx {
   enter() {
     // console.log(this.DOM)
     this.DOM.dot.style.visibility = 'visible'
+    this.DOM.dot.style.transition = 'all .1s'
   }
 
   leave() {
     this.DOM.dot.style.visibility = 'hidden'
-  }
-
-  click() {
-    // this.lastScale = 1
-    // this.lastOpacity = 1
+    this.DOM.dot.style.transition = 'all .1s'
   }
 }
 

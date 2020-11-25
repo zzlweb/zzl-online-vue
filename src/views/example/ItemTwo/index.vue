@@ -5,9 +5,11 @@
         <template #BigTitle>新闻</template>
         <template
           #right
-        ><div class="flex-row" @click="handleClick('/NewsActiveInside')">
-          更多资讯
-          <div class="iconfont icon-look_more" /></div></template>
+        ><div class="flex-row mode-message">
+          更多资讯<img
+            src="../../../assets/svg/gengduo_list.svg"
+            alt=""
+          ></div></template>
       </CommonHeaderTitle>
 
       <div
@@ -56,7 +58,6 @@ export default {
   },
   data() {
     return {
-      screenWidth: document.documentElement.clientWidth, // 屏幕宽度
       itemArr: [
         {
           id: 1,
@@ -93,16 +94,10 @@ export default {
       ]
     }
   },
-  watch: {
-    screenWidth() {
-      // 监听屏幕宽度变化
-      this.handleAside()
-    }
-  },
+
   mounted() {
     this.release()
     this.drag()
-    this.handleAside()
   },
   methods: {
     drag() {
@@ -120,31 +115,138 @@ export default {
         item.addEventListener('mouseleave', () => cursor.leave())
         item.addEventListener('click', () => cursor.click())
       })
-    },
-    handleAside() {
-      const Dom = document
-        .querySelector('.main-container')
-        .querySelector('.title-container')
-      // eslint-disable-next-line no-unused-vars
-      this.Leftwidth = Dom.offsetLeft + 45
-      const DragDom = document
-        .querySelector('.strip-outer')
-        .querySelector('.item')
-      DragDom.style.marginLeft = this.Leftwidth + 'px'
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.container-two {
+  width: 100%;
+  height: 100%;
+  padding: 50px 0 50px 50px;
+
+  .new-container {
+    .title-container {
+      margin-bottom: 80px;
+    }
+
+    .mode-message {
+      align-items: center;
+      cursor: pointer;
+      line-height: 20px;
+
+      img {
+        position: relative;
+        transition: all 0.5s;
+        transform: translateX(0);
+      }
+      &:hover {
+        transition: all 0.5s;
+
+        img {
+          transform: translateX(8px);
+        }
+      }
+    }
+
+    .content-apart {
+      cursor: none;
+      width: 100%;
+      padding: 0 0 0 45px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: none;
+
+      .strip-inner {
+        width: fit-content;
+        height: 100%;
+        position: relative;
+      }
+
+      .draggable {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        cursor: grab !important;
+      }
+
+      .draggable:active {
+        cursor: grabbing !important;
+      }
+      .strip {
+        height: 100%;
+        align-items: start;
+        position: relative;
+        pointer-events: none;
+        padding-right: 40px;
+
+        .strip__item:first-child {
+          margin-left: 0px !important;
+        }
+      }
+
+      .item {
+        margin-right: 50px;
+
+        .img-container {
+          img {
+            width: 640;
+            height: 360px;
+          }
+        }
+
+        .first-title {
+          margin-top: 60px;
+          .left {
+            height: 19px;
+            line-height: 19px;
+            font-weight: bold;
+            color: #000;
+            letter-spacing: 4px;
+            font-size: 14px;
+            margin-right: 36px;
+            margin-top: 5px;
+          }
+
+          .right {
+            height: 34px;
+            line-height: 34px;
+            font-weight: bold;
+            color: #000;
+            font-size: 24px;
+            margin-bottom: 38px;
+          }
+        }
+
+        .second-title {
+          margin-left: 80px;
+          width: 548px;
+          font-size: 16px;
+          color: rgba(0, 0, 0, 0.6);
+          letter-spacing: 0;
+          line-height: 32px;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+
 // 鼠标部分
 .cursor__inner {
   z-index: 9999;
   visibility: hidden;
   pointer-events: none;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 200px;
+  left: 50px;
   // mix-blend-mode:difference;
   border-radius: 50%;
 }
@@ -156,101 +258,5 @@ export default {
   text-align: center;
   line-height: 80px;
   color: #ffffff;
-}
-.new-container {
-  width: 100%;
-  background-color: #fff;
-
-  >>> .title-container {
-    margin: 0px auto 100px;
-  }
-
-  .content-apart {
-    cursor: none;
-    position: relative;
-    width: 100%;
-
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: none;
-
-    .draggable {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      cursor: grab !important;
-    }
-
-    .draggable:active {
-      cursor: grabbing !important;
-    }
-
-    .strip-inner {
-      width: fit-content;
-      position: relative;
-      top: 0;
-      height: 100%;
-    }
-
-    .strip {
-      height: 100%;
-      width: fit-content;
-      align-items: start;
-      position: relative;
-      pointer-events: none;
-      padding-right: 40px;
-    }
-
-    .item {
-      margin-left: 50px;
-      margin-right: 50px;
-
-      .img-container {
-        img {
-          width: 640;
-          height: 360px;
-        }
-      }
-
-      .first-title {
-        margin-top: 60px;
-        .left {
-          height: 19px;
-          line-height: 19px;
-          font-weight: bold;
-          color: #000;
-          letter-spacing: 4px;
-          font-size: 14px;
-          margin-right: 36px;
-          margin-top: 5px;
-        }
-
-        .right {
-          height: 34px;
-          line-height: 34px;
-          font-weight: bold;
-          color: #000;
-          font-size: 24px;
-          margin-bottom: 38px;
-        }
-      }
-
-      .second-title {
-        margin-left: 80px;
-        width: 548px;
-        font-size: 16px;
-        color: rgba(0, 0, 0, 0.6);
-        letter-spacing: 0;
-        line-height: 32px;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
-        overflow: hidden;
-      }
-    }
-  }
 }
 </style>

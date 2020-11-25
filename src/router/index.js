@@ -60,7 +60,7 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/example/ItemOne',
     name: 'Example',
-    meta: { title: '效果展示', icon: 'el-icon-s-help' },
+    meta: { title: '交互效果展示', icon: 'el-icon-s-help' },
     children: [
       {
         path: 'ItemOne',

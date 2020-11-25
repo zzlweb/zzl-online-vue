@@ -4,12 +4,8 @@
       <div class="BigTitle">
         <slot name="BigTitle">关于我们</slot>
       </div>
-      <!-- <div class="line" :style="{ background: color }"></div> -->
-      <div class="smallTitle flex-row">
-        <!-- <slot name="smallTitle">ABOUT US</slot> -->
-      </div>
     </div>
-    <div class="right flex-row">
+    <div class="right flex-row" @click="handleClick()">
       <slot name="right" />
     </div>
   </div>
@@ -26,13 +22,18 @@ export default {
     color: {
       default: '#000000'
     }
+  },
+  methods: {
+    // 触发父组件事件
+    handleClick() {
+      this.$emit('eventHandle')
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .title-container {
-  margin: 100px auto 0;
   height: 80px;
   max-width: 1200px;
   padding: 8px 45px 0;
@@ -47,18 +48,6 @@ export default {
       line-height: 64px;
       font-weight: bold;
     }
-    .line {
-      height: 50px;
-      width: 1px;
-      margin: 0 14px;
-      transform: rotate(-345deg);
-    }
-    .smallTitle {
-      height: 64px;
-      font-size: 14px;
-      letter-spacing: 11px;
-      align-items: flex-end;
-    }
   }
 
   .right {
@@ -69,12 +58,6 @@ export default {
     text-align: right;
     flex: 0 0 100px;
     line-height: 16px;
-
-    .iconfont {
-      margin-left: 8px;
-      font-size: 14px;
-      color: #666;
-    }
   }
 }
 </style>
