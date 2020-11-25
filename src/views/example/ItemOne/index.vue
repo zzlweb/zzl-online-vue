@@ -8,37 +8,13 @@
     </div>
 
     <div id="map-apart" class="map-apart">
-      <div class="out-layer" />
+      <!-- <div class="out-layer" />
       <div class="middle-layer" />
-      <div class="inside-layer" />
-
-      <!-- <div class="select-apart">
-        <div class="cascader_apart">
-          <a-cascader
-            :options="options"
-            :get-popup-container="getPopupContainer"
-            :popup-class-name="'countrySelect'"
-            @change="onChange"
-          >
-            <div class="city_name flex-row">
-              <span v-html="text" />
-              <span
-                style="margin-left:15px"
-                class="fill-flex"
-              ><img
-                src="../../assets/svg/quanqiuxiala.svg"
-                alt=""
-              ></span>
-            </div>
-          </a-cascader>
-        </div>
-      </div> -->
+      <div class="inside-layer" /> -->
 
       <div class="china_tag">
         <div class="tagItem Wuhan">
-          <div class="Tag">
-            Wuhan
-          </div>
+          <div class="Tag">Wuhan</div>
           <div class="content">
             <div class="title">中国&nbsp;·&nbsp;武汉</div>
             <div class="address">地址：上海嘉定区城北路 2258 号，201807</div>
@@ -49,9 +25,7 @@
         </div>
 
         <div class="tagItem shanghai">
-          <div class="Tag">
-            ShangHai
-          </div>
+          <div class="Tag">ShangHai</div>
           <div class="content">
             <div class="title">中国&nbsp;·&nbsp;上海</div>
             <div class="address">全球&nbsp;&nbsp;总部</div>
@@ -62,9 +36,7 @@
       <!-- 韩国标签 -->
       <div class="Korea_tag">
         <div class="tagItem shouer">
-          <div class="Tag">
-            首尔
-          </div>
+          <div class="Tag">首尔</div>
           <div class="content">
             <div class="title">韩国&nbsp;·&nbsp;首尔</div>
             <div class="address">韩国总部</div>
@@ -75,9 +47,7 @@
       <!-- 日本标签 -->
       <div class="Japan_tag">
         <div class="tagItem DongJing">
-          <div class="Tag">
-            东京
-          </div>
+          <div class="Tag">东京</div>
           <div class="content">
             <div class="title">日本&nbsp;·&nbsp;东京</div>
             <div class="address">日本总部</div>
@@ -88,9 +58,7 @@
       <!-- 马来西亚标签 -->
       <div class="Malaysia_tag">
         <div class="tagItem jilongpo">
-          <div class="Tag">
-            吉隆坡
-          </div>
+          <div class="Tag">吉隆坡</div>
           <div class="content">
             <div class="title">马来西亚&nbsp;·&nbsp;吉隆坡</div>
             <div class="address">亚太区 总部</div>
@@ -101,9 +69,7 @@
       <!-- 澳大利亚标签 -->
       <div class="Australia_tag">
         <div class="tagItem moerben">
-          <div class="Tag">
-            墨尔本
-          </div>
+          <div class="Tag">墨尔本</div>
           <div class="content">
             <div class="title">澳大利亚&nbsp;·&nbsp;墨尔本</div>
             <div class="address">澳大利亚及新西兰总部</div>
@@ -114,9 +80,7 @@
       <!-- 美国标签 -->
       <div class="us_tag">
         <div class="tagItem XiusiDun">
-          <div class="Tag">
-            Houston
-          </div>
+          <div class="Tag">Houston</div>
           <div class="content">
             <div class="title">USA&nbsp;·&nbsp;Houston</div>
             <div class="address">中央研究院美国分院</div>
@@ -129,9 +93,7 @@
       <!-- 波兰标签 -->
       <div class="Poland_tag">
         <div class="tagItem huasha">
-          <div class="Tag">
-            Warsaw
-          </div>
+          <div class="Tag">Warsaw</div>
           <div class="content">
             <div class="title">波兰&nbsp;·&nbsp;华沙</div>
             <div class="address">中东欧区域总部</div>
@@ -142,9 +104,7 @@
       <!-- 迪拜标签 -->
       <div class="Dibai_tag">
         <div class="tagItem dibai">
-          <div class="Tag">
-            dubai
-          </div>
+          <div class="Tag">dubai</div>
           <div class="content">
             <div class="title">阿联酋&nbsp;·&nbsp;迪拜</div>
             <div class="address">中东及非洲区域总部</div>
@@ -155,9 +115,7 @@
       <!-- 埃及标签 -->
       <div class="Egypt_tag">
         <div class="tagItem kailuo">
-          <div class="Tag">
-            Cairo
-          </div>
+          <div class="Tag">Cairo</div>
           <div class="content">
             <div class="title">埃及&nbsp;·&nbsp;开罗</div>
           </div>
@@ -239,9 +197,6 @@ export default {
       this.handleAside()
     }
   },
-  // beforeDestroy() {
-  //   this.TimeId = "";
-  // },
   mounted() {
     this.handleAside()
     const runtime = new Runtime()
@@ -257,12 +212,7 @@ export default {
   },
   methods: {
     onChange(value) {
-      // this.text = selectedOptions.map(o => o.label).join(", ");
-      // console.log(value[0]);
       this.text = value[0]
-      // this.id = value[0][1];
-      // console.log(this.id);
-      // this.getJSON();
     },
     handleAside() {
       const Dom = document.querySelector('#NetWork').querySelector('.BigTitle')
@@ -274,14 +224,6 @@ export default {
     getPopupContainer() {
       return this.$refs.mapContainer
     }
-    // getJSON() {
-    //   this.json = JSON.parse(localStorage.getItem("country"));
-    //   // 取出选中城市的信息
-    //   this.country = this.json.objects.countries.geometries.filter(
-    //     item => item.id == this.id
-    //   );
-    //   //清空所有国家信息
-    // }
   }
 }
 </script>
@@ -292,13 +234,10 @@ export default {
   height: 1060px;
   position: relative;
   background: rgba(12, 12, 12, 0.102);
+  padding: 50px 0 50px 50px;
 
-  .title_container {
-    position: absolute;
-    height: 80px;
-    top: 0;
-    z-index: 1;
-    width: 100%;
+  .title-container {
+    margin-bottom: 80px;
   }
 
   .map-apart {
@@ -331,62 +270,39 @@ export default {
       }
     }
 
-    .out-layer {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      border: 2px solid #fff;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
+    // .out-layer {
+    //   position: absolute;
+    //   width: 100%;
+    //   height: 100%;
+    //   border-radius: 50%;
+    //   border: 2px solid #fff;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translate(-50%, -50%);
+    // }
 
-    .inside-layer {
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      border: 2px solid #fff;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 2;
-    }
+    // .inside-layer {
+    //   position: absolute;
+    //   width: 400px;
+    //   height: 400px;
+    //   border-radius: 50%;
+    //   border: 2px solid #fff;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translate(-50%, -50%);
+    //   z-index: 2;
+    // }
 
-    .middle-layer {
-      position: absolute;
-      width: 1000px;
-      height: 1000px;
-      border-radius: 50%;
-      border: 2px solid #fff;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .select-apart {
-      width: 366px;
-      height: 378px;
-      position: absolute;
-      left: 78px;
-      top: 160px;
-      z-index: 100;
-
-      .cascader_apart {
-        width: 100%;
-        height: 40px;
-      }
-
-      .city_name {
-        font-size: 28px;
-        color: #000000;
-        letter-spacing: 0;
-        height: 40px;
-        line-height: 40px;
-        position: relative;
-      }
-    }
+    // .middle-layer {
+    //   position: absolute;
+    //   width: 1000px;
+    //   height: 1000px;
+    //   border-radius: 50%;
+    //   border: 2px solid #fff;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translate(-50%, -50%);
+    // }
   }
 
   @media screen and (max-width: 1300px) {
@@ -800,49 +716,6 @@ export default {
       }
       &.dibai {
         top: 600px;
-      }
-    }
-  }
-
-  // 级联选择展开部分样式
-  >>> .countrySelect {
-    background-color: transparent;
-    box-shadow: none;
-    .ant-cascader-menus-content {
-      margin-top: 20px;
-      .ant-cascader-menu-item:hover {
-        background: #ffff;
-      }
-      .ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled),
-      .ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled):hover {
-        background-color: #efefef;
-        color: #000;
-      }
-      .ant-cascader-menu {
-        padding: 0;
-        border-right: none;
-      }
-      .ant-cascader-menu-item {
-        padding: 0;
-      }
-      .ant-cascader-menu-item-expand {
-        padding-right: 0;
-      }
-      .ant-cascader-menu:first-child,
-      .ant-cascader-menu:nth-child(2) {
-        background: #ffffff;
-        width: 181px;
-        text-align: center;
-        font-size: 21px;
-        height: 530px;
-        color: rgba(0, 0, 0, 0.5);
-        li {
-          height: 53px;
-          line-height: 53px;
-        }
-        li > span {
-          display: none;
-        }
       }
     }
   }
