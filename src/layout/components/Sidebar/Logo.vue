@@ -24,14 +24,16 @@ export default {
   },
   data() {
     return {
-      title: '日常展示项目',
-      logo: 'https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png'
+      title: '作品展示',
+      logo: require('../../../assets/svg/touxiang.svg')
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+@import '@/styles/variables.scss';
+
 .sidebarLogoFade-enter-active {
   transition: opacity 1.5s;
 }
@@ -46,7 +48,7 @@ export default {
   width: 100%;
   height: 50px;
   line-height: 50px;
-  background: #2b2f3a;
+  background:$primary-color;
   padding: 0 20px;
   overflow: hidden;
 

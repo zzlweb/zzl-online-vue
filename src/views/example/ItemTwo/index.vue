@@ -113,7 +113,6 @@ export default {
         // eslint-disable-next-line no-unused-vars
         item.addEventListener('mouseover', (item) => cursor.enter())
         item.addEventListener('mouseleave', () => cursor.leave())
-        item.addEventListener('click', () => cursor.click())
       })
     }
   }

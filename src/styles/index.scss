@@ -64,3 +64,9 @@ div:focus {
 .app-container {
   padding: 20px;
 }
+
+// 公共样式
+// ---el-breadcrumb---
+.el-breadcrumb__inner a:hover, .el-breadcrumb__inner.is-link:hover{
+  color: $primary-color;
+}

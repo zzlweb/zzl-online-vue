@@ -53,7 +53,7 @@ const actions = {
         }
 
         const { name, avatar } = data
-        console.log(name, avatar)
+        // console.log(name, avatar)
         commit('SET_NAME', name)
         commit('SET_AVATAR', avatar)
         resolve(data)

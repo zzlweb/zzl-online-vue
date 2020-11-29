@@ -8,7 +8,7 @@ function e(e, t, n) {
     ? (i = new i(t, { detail: n }))
     // eslint-disable-next-line no-sequences
     : ((i = r.createEvent('Event')).initEvent(t, !1, !1), (i.detail = n)),
-  e.dispatchEvent(i)
+    e.dispatchEvent(i)
 }
 function t(e) {
   return (
@@ -108,8 +108,8 @@ function w(n, i, o, a) {
         : // eslint-disable-next-line no-cond-assign
         (c = m(n))
           ? ((s = `Immutable.${c.name}${c.name === 'Record' ? '' : `(${n.size})`}`),
-          (d = c.arrayish),
-          (l = c.arrayish ? C : c.setish ? E : S))
+            (d = c.arrayish),
+            (l = c.arrayish ? C : c.setish ? E : S))
           : a
             ? ((s = f(n)), (l = N))
             : ((s = f(n)), (l = P))
@@ -118,59 +118,59 @@ function w(n, i, o, a) {
   const h = p.appendChild(document.createElement('a'));
   (h.innerHTML =
     "<svg width=8 height=8 class='observablehq--caret'>\n    <path d='M4 7L0 1h8z' fill='currentColor' />\n  </svg>"),
-  h.appendChild(document.createTextNode(`${s}${d ? ' [' : ' {'}`)),
-  h.addEventListener('mouseup', function(e) {
-    e.stopPropagation(), ae(p, O(n, null, o, a))
-  }),
-  (l = l(n))
+    h.appendChild(document.createTextNode(`${s}${d ? ' [' : ' {'}`)),
+    h.addEventListener('mouseup', function (e) {
+      e.stopPropagation(), ae(p, O(n, null, o, a))
+    }),
+    (l = l(n))
   for (let e = 0; !(u = l.next()).done && e < 20; ++e) p.appendChild(u.value)
   if (!u.done) {
     const t = p.appendChild(document.createElement('a'));
     (t.className = 'observablehq--field'),
-    (t.style.display = 'block'),
-    t.appendChild(document.createTextNode('  … more')),
-    t.addEventListener('mouseup', function(t) {
-      t.stopPropagation(),
-      p.insertBefore(u.value, p.lastChild.previousSibling)
-      for (let e = 0; !(u = l.next()).done && e < 19; ++e) { p.insertBefore(u.value, p.lastChild.previousSibling) }
-      u.done && p.removeChild(p.lastChild.previousSibling), e(p, 'load')
-    })
+      (t.style.display = 'block'),
+      t.appendChild(document.createTextNode('  … more')),
+      t.addEventListener('mouseup', function (t) {
+        t.stopPropagation(),
+          p.insertBefore(u.value, p.lastChild.previousSibling)
+        for (let e = 0; !(u = l.next()).done && e < 19; ++e) { p.insertBefore(u.value, p.lastChild.previousSibling) }
+        u.done && p.removeChild(p.lastChild.previousSibling), e(p, 'load')
+      })
   }
   return p.appendChild(document.createTextNode(d ? ']' : '}')), p
 }
-function * y(e) {
+function* y(e) {
   for (const [t, n] of e) yield j(t, n)
-  yield * P(e)
+  yield* P(e)
 }
-function * g(e) {
+function* g(e) {
   for (const t of e) yield L(t)
-  yield * P(e)
+  yield* P(e)
 }
-function * E(e) {
+function* E(e) {
   for (const t of e) yield L(t)
 }
-function * x(e) {
+function* x(e) {
   for (let t = 0, n = e.length; t < n; ++t) { t in e && (yield M(t, p(e, t), 'observablehq--index')) }
   for (const t in e) { !n(t) && d(e, t) && (yield M(t, p(e, t), 'observablehq--key')) }
   for (const t of c(e)) yield M(o(t), p(e, t), 'observablehq--symbol')
 }
-function * C(e) {
+function* C(e) {
   let t = 0
   for (const n = e.size; t < n; ++t) yield M(t, e.get(t), !0)
 }
-function * N(e) {
+function* N(e) {
   for (const t in b(e)) yield M(t, p(e, t), 'observablehq--key')
   for (const t of c(e)) yield M(o(t), p(e, t), 'observablehq--symbol')
   const t = v(e)
   t && t !== _ && (yield q(t))
 }
-function * P(e) {
+function* P(e) {
   for (const t in e) d(e, t) && (yield M(t, p(e, t), 'observablehq--key'))
   for (const t of c(e)) yield M(o(t), p(e, t), 'observablehq--symbol')
   const t = v(e)
   t && t !== _ && (yield q(t))
 }
-function * S(e) {
+function* S(e) {
   for (const [t, n] of e) yield M(t, n, 'observablehq--key')
 }
 function q(e) {
@@ -242,17 +242,17 @@ function O(e, n, i, o) {
           : // eslint-disable-next-line no-cond-assign
           (u = m(e))
             ? ((a = `Immutable.${u.name}${u.name === 'Record' ? '' : `(${e.size})`}`),
-            (c = u.arrayish),
-            (s = u.arrayish ? U : u.setish ? $ : F))
+              (c = u.arrayish),
+              (s = u.arrayish ? U : u.setish ? $ : F))
             : ((a = f(e)), (s = D)),
-    n)
+      n)
   ) {
     const t = document.createElement('span')
     return (
       (t.className = 'observablehq--shallow'),
       i && t.appendChild(r(i)),
       t.appendChild(document.createTextNode(a)),
-      t.addEventListener('mouseup', function(n) {
+      t.addEventListener('mouseup', function (n) {
         k(t) || (n.stopPropagation(), ae(t, O(e)))
       }),
       t
@@ -264,18 +264,18 @@ function O(e, n, i, o) {
   const p = d.appendChild(document.createElement('a'));
   (p.innerHTML =
     "<svg width=8 height=8 class='observablehq--caret'>\n    <path d='M7 4L1 8V0z' fill='currentColor' />\n  </svg>"),
-  p.appendChild(document.createTextNode(`${a}${c ? ' [' : ' {'}`)),
-  d.addEventListener(
-    'mouseup',
-    function(t) {
-      k(d) || (t.stopPropagation(), ae(d, w(e, 0, i, o)))
-    },
-    !0
-  ),
-  (s = s(e))
+    p.appendChild(document.createTextNode(`${a}${c ? ' [' : ' {'}`)),
+    d.addEventListener(
+      'mouseup',
+      function (t) {
+        k(d) || (t.stopPropagation(), ae(d, w(e, 0, i, o)))
+      },
+      !0
+    ),
+    (s = s(e))
   for (let e = 0; !(l = s.next()).done && e < 20; ++e) {
     e > 0 && d.appendChild(document.createTextNode(', ')),
-    d.appendChild(l.value)
+      d.appendChild(l.value)
   }
   return (
     l.done || d.appendChild(document.createTextNode(', …')),
@@ -283,25 +283,25 @@ function O(e, n, i, o) {
     d
   )
 }
-function * T(e) {
+function* T(e) {
   for (const [t, n] of e) yield B(t, n)
-  yield * D(e)
+  yield* D(e)
 }
-function * A(e) {
+function* A(e) {
   for (const t of e) yield oe(t, !0)
-  yield * D(e)
+  yield* D(e)
 }
-function * $(e) {
+function* $(e) {
   for (const t of e) yield oe(t, !0)
 }
-function * U(e) {
+function* U(e) {
   let t = -1
   let n = 0
   // eslint-disable-next-line no-sequences
   for (const r = e.size; n < r; ++n) { n > t + 1 && (yield I(n - t - 1)), yield oe(e.get(n), !0), (t = n) }
   n > t + 1 && (yield I(n - t - 1))
 }
-function * R(e) {
+function* R(e) {
   let t = -1
   let r = 0
   for (const n = e.length; r < n; ++r) {
@@ -312,11 +312,11 @@ function * R(e) {
   for (const t in e) { !n(t) && d(e, t) && (yield z(t, p(e, t), 'observablehq--key')) }
   for (const t of c(e)) yield z(o(t), p(e, t), 'observablehq--symbol')
 }
-function * D(e) {
+function* D(e) {
   for (const t in e) d(e, t) && (yield z(t, p(e, t), 'observablehq--key'))
   for (const t of c(e)) yield z(o(t), p(e, t), 'observablehq--symbol')
 }
-function * F(e) {
+function* F(e) {
   for (const [t, n] of e) yield z(t, n, 'observablehq--key')
 }
 function I(e) {
@@ -423,7 +423,7 @@ function oe(e, t, n, i, a) {
       e = o(e)
       break
     case 'function':
-      return (function(e, t) {
+      return (function (e, t) {
         var n
         var r
         var i = X.call(e)
@@ -453,7 +453,7 @@ function oe(e, t, n, i, a) {
               : re(n, '(…)', t)
       })(e, i)
     case 'string':
-      return (function(e, t, n, i) {
+      return (function (e, t, n, i) {
         if (!1 === t) {
           if (J(e, /["\n]/g) <= J(e, /`|\${/g)) {
             const t = document.createElement('span')
@@ -471,13 +471,13 @@ function oe(e, t, n, i, a) {
             i && n.appendChild(r(i))
             const a = n.appendChild(document.createElement('span'));
             (a.className = 'observablehq--string'),
-            (a.textContent = '`' + K(o.slice(0, 20).join('\n')))
+              (a.textContent = '`' + K(o.slice(0, 20).join('\n')))
             const s = n.appendChild(document.createElement('span'))
             const l = o.length - 20
             return (
               (s.textContent = `Show ${l} truncated line${l > 1 ? 's' : ''}`),
               (s.className = 'observablehq--string-expand'),
-              s.addEventListener('mouseup', function(r) {
+              s.addEventListener('mouseup', function (r) {
                 r.stopPropagation(), ae(n, oe(e, t, !0, i))
               }),
               n
@@ -511,23 +511,23 @@ function oe(e, t, n, i, a) {
       }
       if (e instanceof Date) {
         (s = 'date'),
-        (l = e),
-        (e = isNaN(l)
-          ? 'Invalid Date'
-          : (function(e) {
-            return (
-              e.getUTCMilliseconds() === 0 &&
+          (l = e),
+          (e = isNaN(l)
+            ? 'Invalid Date'
+            : (function (e) {
+              return (
+                e.getUTCMilliseconds() === 0 &&
                 e.getUTCSeconds() === 0 &&
                 e.getUTCMinutes() === 0 &&
                 e.getUTCHours() === 0
-            )
-          })(l)
-            ? W(l.getUTCFullYear()) +
+              )
+            })(l)
+              ? W(l.getUTCFullYear()) +
               '-' +
               H(l.getUTCMonth() + 1, 2) +
               '-' +
               H(l.getUTCDate(), 2)
-            : W(l.getFullYear()) +
+              : W(l.getFullYear()) +
               '-' +
               H(l.getMonth() + 1, 2) +
               '-' +
@@ -550,16 +550,16 @@ function oe(e, t, n, i, a) {
       switch (ie.call(e)) {
         case '[object RegExp]':
           (s = 'regexp'),
-          (e = (function(e) {
-            return G.call(e)
-          })(e))
+            (e = (function (e) {
+              return G.call(e)
+            })(e))
           break
         case '[object Error]':
         case '[object DOMException]':
           (s = 'error'),
-          (e = (function(e) {
-            return e.stack || V.call(e)
-          })(e))
+            (e = (function (e) {
+              return e.stack || V.call(e)
+            })(e))
           break
         default:
           return (n ? w : O)(e, t, i, a)
@@ -574,8 +574,8 @@ function oe(e, t, n, i, a) {
 function ae(t, n) {
   t.classList.contains('observablehq--inspect') &&
     n.classList.add('observablehq--inspect'),
-  t.parentNode.replaceChild(n, t),
-  e(n, 'load')
+    t.parentNode.replaceChild(n, t),
+    e(n, 'load')
 }
 const se = /\s+\(\d+:\d+\)$/m
 class le {
@@ -586,7 +586,7 @@ class le {
   pending() {
     const { _node: e } = this
     e.classList.remove('observablehq--error'),
-    e.classList.add('observablehq--running')
+      e.classList.add('observablehq--running')
   }
   fulfilled(t, n) {
     const { _node: r } = this
@@ -601,8 +601,8 @@ class le {
           r.firstChild.classList.contains('observablehq--expanded'),
           n
         )).classList.add('observablehq--inspect'),
-      r.classList.remove('observablehq--running', 'observablehq--error'),
-      r.firstChild !== t)
+        r.classList.remove('observablehq--running', 'observablehq--error'),
+        r.firstChild !== t)
     ) {
       if (r.firstChild) {
         for (; r.lastChild !== r.firstChild;) r.removeChild(r.lastChild)
@@ -621,15 +621,15 @@ class le {
     ) { i.removeChild(i.lastChild) }
     var o = document.createElement('div');
     (o.className = 'observablehq--inspect'),
-    n && o.appendChild(r(n)),
-    o.appendChild(document.createTextNode((t + '').replace(se, ''))),
-    i.appendChild(o),
-    e(i, 'error', { error: t })
+      n && o.appendChild(r(n)),
+      o.appendChild(document.createTextNode((t + '').replace(se, ''))),
+      i.appendChild(o),
+      e(i, 'error', { error: t })
   }
 }
-le.into = function(e) {
+le.into = function (e) {
   if (typeof e === 'string' && (e = document.querySelector(e)) == null) { throw new Error('container not found') }
-  return function() {
+  return function () {
     return new le(e.appendChild(document.createElement('div')))
   }
 }
@@ -668,7 +668,7 @@ function ye(e) {
   )
 }
 RequireError.prototype.name = RequireError.name
-var ge = Ee(async function(e, t) {
+var ge = Ee(async function (e, t) {
   if (
     (e.startsWith(he) && (e = e.substring(he.length)), /^(\w+:)|\/\//i.test(e))
   ) { return e }
@@ -684,11 +684,11 @@ var ge = Ee(async function(e, t) {
   }
   if (
     (n.path && !be.test(n.path) && (n.path += '.js'),
-    n.path && n.version && ve.test(n.version))
+      n.path && n.version && ve.test(n.version))
   ) { return `${he}${n.name}@${n.version}/${n.path}` }
   const r = await ye(n)
   return `${he}${r.name}@${r.version}/${n.path ||
-    (function(e) {
+    (function (e) {
       for (const t of _e) {
         const n = e[t]
         if (typeof n === 'string') return be.test(n) ? n : n + '.js'
@@ -716,13 +716,13 @@ function Ee(e) {
             }
             r.remove()
           }),
-          (r.onerror = () => {
-            n(new RequireError('unable to load module')), r.remove()
-          }),
-          (r.async = !0),
-          (r.src = e),
-          (window.define = Pe),
-          document.head.appendChild(r)
+            (r.onerror = () => {
+              n(new RequireError('unable to load module')), r.remove()
+            }),
+            (r.async = !0),
+            (r.src = e),
+            (window.define = Pe),
+            document.head.appendChild(r)
         }))
       ),
       n
@@ -737,7 +737,7 @@ function Ee(e) {
       : n(e)
   }
   return (
-    (o.alias = function(t) {
+    (o.alias = function (t) {
       return Ee((n, r) =>
         n in t && ((r = null), typeof (n = t[n]) !== 'string') ? n : e(n, r)
       )
@@ -769,22 +769,22 @@ function Pe(e, t, n) {
   r < 2
     ? ((n = e), (t = []))
     : r < 3 && ((n = t), (t = typeof e === 'string' ? [] : e)),
-  ce.push(
-    fe.call(t, Ne)
-      ? e => {
-        const r = {}
-        const i = { exports: r }
-        return Promise.all(
-          de.call(t, t =>
-            (t += '') === 'exports' ? r : t === 'module' ? i : e(t)
+    ce.push(
+      fe.call(t, Ne)
+        ? e => {
+          const r = {}
+          const i = { exports: r }
+          return Promise.all(
+            de.call(t, t =>
+              (t += '') === 'exports' ? r : t === 'module' ? i : e(t)
+            )
+          ).then(e => (n.apply(null, e), i.exports))
+        }
+        : e =>
+          Promise.all(de.call(t, e)).then(e =>
+            typeof n === 'function' ? n.apply(null, e) : n
           )
-        ).then(e => (n.apply(null, e), i.exports))
-      }
-      : e =>
-        Promise.all(de.call(t, e)).then(e =>
-          typeof n === 'function' ? n.apply(null, e) : n
-        )
-  )
+    )
 }
 async function Se(e) {
   const t = await fetch(await e.url())
@@ -842,9 +842,9 @@ class FileAttachment {
       const r = new Image()
       new URL(e, document.baseURI).origin !== new URL(location).origin &&
         (r.crossOrigin = 'anonymous'),
-      (r.onload = () => t(r)),
-      (r.onerror = () => n(new Error('Unable to load file: ' + this.name))),
-      (r.src = e)
+        (r.onload = () => t(r)),
+        (r.onerror = () => n(new Error('Unable to load file: ' + this.name))),
+        (r.src = e)
     })
   }
 }
@@ -852,7 +852,7 @@ function Me(e) {
   throw new Error('File not found: ' + e)
 }
 function je(e) {
-  return function() {
+  return function () {
     return e
   }
 }
@@ -868,30 +868,30 @@ var ke = 0
 function Oe(e) {
   (this.id = e), (this.href = new URL('#' + e, location) + '')
 }
-Oe.prototype.toString = function() {
+Oe.prototype.toString = function () {
   return 'url(' + this.href + ')'
 }
 var Te = {
-  canvas: function(e, t) {
+  canvas: function (e, t) {
     var n = document.createElement('canvas')
     return (n.width = e), (n.height = t), n
   },
-  context2d: function(e, t, n) {
+  context2d: function (e, t, n) {
     n == null && (n = devicePixelRatio)
     var r = document.createElement('canvas');
     (r.width = e * n), (r.height = t * n), (r.style.width = e + 'px')
     var i = r.getContext('2d')
     return i.scale(n, n), i
   },
-  download: function(e, t = 'untitled', n = 'Save') {
+  download: function (e, t = 'untitled', n = 'Save') {
     const r = document.createElement('a')
     const i = r.appendChild(document.createElement('button'))
     async function o() {
       await new Promise(requestAnimationFrame),
-      URL.revokeObjectURL(r.href),
-      r.removeAttribute('href'),
-      (i.textContent = n),
-      (i.disabled = !1)
+        URL.revokeObjectURL(r.href),
+        r.removeAttribute('href'),
+        (i.textContent = n),
+        (i.disabled = !1)
     }
     return (
       (i.textContent = n),
@@ -911,7 +911,7 @@ var Te = {
       r
     )
   },
-  element: function(e, t) {
+  element: function (e, t) {
     var n
     var r = (e += '')
     var i = r.indexOf(':')
@@ -923,21 +923,21 @@ var Te = {
     if (t) {
       for (var a in t) {
         (i = (r = a).indexOf(':')),
-        (n = t[a]),
-        i >= 0 && (r = a.slice(0, i)) !== 'xmlns' && (a = a.slice(i + 1)),
-        // eslint-disable-next-line no-prototype-builtins
-        Le.hasOwnProperty(r)
-          ? o.setAttributeNS(Le[r], a, n)
-          : o.setAttribute(a, n)
+          (n = t[a]),
+          i >= 0 && (r = a.slice(0, i)) !== 'xmlns' && (a = a.slice(i + 1)),
+          // eslint-disable-next-line no-prototype-builtins
+          Le.hasOwnProperty(r)
+            ? o.setAttributeNS(Le[r], a, n)
+            : o.setAttribute(a, n)
       }
     }
     return o
   },
-  input: function(e) {
+  input: function (e) {
     var t = document.createElement('input')
     return e != null && (t.type = e), t
   },
-  range: function(e, t, n) {
+  range: function (e, t, n) {
     arguments.length === 1 && ((t = e), (e = null))
     var r = document.createElement('input')
     return (
@@ -948,17 +948,17 @@ var Te = {
       r
     )
   },
-  select: function(e) {
+  select: function (e) {
     var t = document.createElement('select')
     return (
-      Array.prototype.forEach.call(e, function(e) {
+      Array.prototype.forEach.call(e, function (e) {
         var n = document.createElement('option');
         (n.value = n.textContent = e), t.appendChild(n)
       }),
       t
     )
   },
-  svg: function(e, t) {
+  svg: function (e, t) {
     var n = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
     return (
       n.setAttribute('viewBox', [0, 0, e, t]),
@@ -967,42 +967,42 @@ var Te = {
       n
     )
   },
-  text: function(e) {
+  text: function (e) {
     return document.createTextNode(e)
   },
-  uid: function(e) {
+  uid: function (e) {
     return new Oe('O-' + (e == null ? '' : e + '-') + ++ke)
   }
 }
 var Ae = {
-  buffer: function(e) {
-    return new Promise(function(t, n) {
+  buffer: function (e) {
+    return new Promise(function (t, n) {
       var r = new FileReader();
-      (r.onload = function() {
+      (r.onload = function () {
         t(r.result)
       }),
-      (r.onerror = n),
-      r.readAsArrayBuffer(e)
+        (r.onerror = n),
+        r.readAsArrayBuffer(e)
     })
   },
-  text: function(e) {
-    return new Promise(function(t, n) {
+  text: function (e) {
+    return new Promise(function (t, n) {
       var r = new FileReader();
-      (r.onload = function() {
+      (r.onload = function () {
         t(r.result)
       }),
-      (r.onerror = n),
-      r.readAsText(e)
+        (r.onerror = n),
+        r.readAsText(e)
     })
   },
-  url: function(e) {
-    return new Promise(function(t, n) {
+  url: function (e) {
+    return new Promise(function (t, n) {
       var r = new FileReader();
-      (r.onload = function() {
+      (r.onload = function () {
         t(r.result)
       }),
-      (r.onerror = n),
-      r.readAsDataURL(e)
+        (r.onerror = n),
+        r.readAsDataURL(e)
     })
   }
 }
@@ -1023,7 +1023,7 @@ function Re(e) {
   let t
   let n
   let r = !1
-  const i = e(function(e) {
+  const i = e(function (e) {
     n ? (n(e), (n = null)) : (r = !0)
     return (t = e)
   })
@@ -1038,7 +1038,7 @@ function Re(e) {
     [Symbol.iterator]: $e,
     throw: () => ({ done: !0 }),
     return: () => (i != null && i(), { done: !0 }),
-    next: function() {
+    next: function () {
       return {
         done: !1,
         value: r ? ((r = !1), Promise.resolve(t)) : new Promise(e => (n = e))
@@ -1065,12 +1065,12 @@ function De(e) {
 }
 var Fe = {
   disposable: Ue,
-  filter: function * (e, t) {
+  filter: function* (e, t) {
     for (var n, r = -1; !(n = e.next()).done;) { t(n.value, ++r) && (yield n.value) }
   },
-  input: function(e) {
-    return Re(function(t) {
-      var n = (function(e) {
+  input: function (e) {
+    return Re(function (t) {
+      var n = (function (e) {
         switch (e.type) {
           case 'button':
           case 'submit':
@@ -1089,20 +1089,20 @@ var Fe = {
       return (
         e.addEventListener(n, i),
         void 0 !== r && t(r),
-        function() {
+        function () {
           e.removeEventListener(n, i)
         }
       )
     })
   },
-  map: function * (e, t) {
+  map: function* (e, t) {
     for (var n, r = -1; !(n = e.next()).done;) yield t(n.value, ++r)
   },
   observe: Re,
-  queue: function(e) {
+  queue: function (e) {
     let t
     const n = []
-    const r = e(function(e) {
+    const r = e(function (e) {
       n.push(e), t && (t(n.shift()), (t = null))
       return e
     })
@@ -1117,7 +1117,7 @@ var Fe = {
       [Symbol.iterator]: $e,
       throw: () => ({ done: !0 }),
       return: () => (r != null && r(), { done: !0 }),
-      next: function() {
+      next: function () {
         return {
           done: !1,
           value: n.length
@@ -1127,16 +1127,16 @@ var Fe = {
       }
     }
   },
-  range: function * (e, t, n) {
+  range: function* (e, t, n) {
     (e = +e),
-    (t = +t),
-    (n = (i = arguments.length) < 2 ? ((t = e), (e = 0), 1) : i < 3 ? 1 : +n)
+      (t = +t),
+      (n = (i = arguments.length) < 2 ? ((t = e), (e = 0), 1) : i < 3 ? 1 : +n)
     for (var r = -1, i = 0 | Math.max(0, Math.ceil((t - e) / n)); ++r < i;) { yield e + r * n }
   },
-  valueAt: function(e, t) {
+  valueAt: function (e, t) {
     if (!(!isFinite((t = +t)) || t < 0 || (t != t) | 0)) { for (var n, r = -1; !(n = e.next()).done;) if (++r === t) return n.value }
   },
-  worker: function(e) {
+  worker: function (e) {
     const t = URL.createObjectURL(new Blob([e], { type: 'text/javascript' }))
     const n = new Worker(t)
     return Ue(n, () => {
@@ -1145,7 +1145,7 @@ var Fe = {
   }
 }
 function Ie(e, t) {
-  return function(n) {
+  return function (n) {
     var r
     var i
     var o
@@ -1164,8 +1164,8 @@ function Ie(e, t) {
           (i = r[u]) instanceof Node
             ? (p === null &&
               ((f[++h] = p = document.createDocumentFragment()),
-              (d += '\x3c!--o:' + h + '--\x3e')),
-            p.appendChild(i))
+                (d += '\x3c!--o:' + h + '--\x3e')),
+              p.appendChild(i))
             : ((p = null), (d += i))
         }
         p = null
@@ -1180,7 +1180,7 @@ function Ie(e, t) {
 
       ) {
         (i = a.currentNode),
-        /^o:/.test(i.nodeValue) && (o[+i.nodeValue.slice(2)] = i)
+          /^o:/.test(i.nodeValue) && (o[+i.nodeValue.slice(2)] = i)
       }
       for (s = 0; s < h; ++s) (i = o[s]) && i.parentNode.replaceChild(f[s], i)
     }
@@ -1192,30 +1192,30 @@ function Ie(e, t) {
   }
 }
 var ze = Ie(
-  function(e) {
+  function (e) {
     var t = document.createElement('template')
     return (t.innerHTML = e.trim()), document.importNode(t.content, !0)
   },
-  function() {
+  function () {
     return document.createElement('span')
   }
 )
 const Be = 'https://cdn.jsdelivr.net/npm/@observablehq/highlight.js@2.0.0/'
 function He(e) {
-  return function() {
-    return e('marked@0.3.12/marked.min.js').then(function(t) {
+  return function () {
+    return e('marked@0.3.12/marked.min.js').then(function (t) {
       return Ie(
-        function(n) {
+        function (n) {
           var r = document.createElement('div')
           r.innerHTML = t(n, { langPrefix: '' }).trim()
           var i = r.querySelectorAll('pre code[class]')
           return (
             i.length > 0 &&
-            e(Be + 'highlight.min.js').then(function(t) {
-              i.forEach(function(n) {
+            e(Be + 'highlight.min.js').then(function (t) {
+              i.forEach(function (n) {
                 function r() {
                   t.highlightBlock(n),
-                  n.parentNode.classList.add('observablehq--md-pre')
+                    n.parentNode.classList.add('observablehq--md-pre')
                 }
                 t.getLanguage(n.className)
                   ? r()
@@ -1235,7 +1235,7 @@ function He(e) {
             r
           )
         },
-        function() {
+        function () {
           return document.createElement('div')
         }
       )
@@ -1252,9 +1252,9 @@ function We(e) {
     },
     value: { get: () => e, set: n => t((e = n)) }
   }),
-  void 0 !== e && t(e)
+    void 0 !== e && t(e)
 }
-function * Ve() {
+function* Ve() {
   for (; ;) yield Date.now()
 }
 var Ge = new Map()
@@ -1265,8 +1265,8 @@ function Ke(e, t) {
     ? n.then(je(t))
     : (n = Date.now()) >= e
       ? Promise.resolve(t)
-      : (function(e, t) {
-        var n = new Promise(function(n) {
+      : (function (e, t) {
+        var n = new Promise(function (n) {
           Ge.delete(t)
           var r = t - e
           if (!(r > 0)) throw new Error('invalid time')
@@ -1277,14 +1277,14 @@ function Ke(e, t) {
       })(n, e).then(je(t))
 }
 var Ye = {
-  delay: function(e, t) {
-    return new Promise(function(n) {
-      setTimeout(function() {
+  delay: function (e, t) {
+    return new Promise(function (n) {
+      setTimeout(function () {
         n(t)
       }, e)
     })
   },
-  tick: function(e, t) {
+  tick: function (e, t) {
     return Ke(Math.ceil((Date.now() + 1) / e) * e, t)
   },
   when: Ke
@@ -1299,35 +1299,35 @@ function Xe(e) {
   return e == null ? ge : Ee(e)
 }
 var Qe = Ie(
-  function(e) {
+  function (e) {
     var t = document.createElementNS('http://www.w3.org/2000/svg', 'g')
     return (t.innerHTML = e.trim()), t
   },
-  function() {
+  function () {
     return document.createElementNS('http://www.w3.org/2000/svg', 'g')
   }
 )
 var Ze = String.raw
 function et(e) {
-  return new Promise(function(t, n) {
+  return new Promise(function (t, n) {
     var r = document.createElement('link');
     (r.rel = 'stylesheet'),
-    (r.href = e),
-    (r.onerror = n),
-    (r.onload = t),
-    document.head.appendChild(r)
+      (r.href = e),
+      (r.onerror = n),
+      (r.onload = t),
+      document.head.appendChild(r)
   })
 }
 function tt(e) {
-  return function() {
+  return function () {
     return Promise.all([
       e('@observablehq/katex@0.11.1/dist/katex.min.js'),
       e.resolve('@observablehq/katex@0.11.1/dist/katex.min.css').then(et)
-    ]).then(function(e) {
+    ]).then(function (e) {
       var t = e[0]
       var n = r()
       function r(e) {
-        return function() {
+        return function () {
           var n = document.createElement('div')
           return (
             t.render(Ze.apply(String, arguments), n, e),
@@ -1340,13 +1340,17 @@ function tt(e) {
   }
 }
 function nt() {
-  return Re(function(e) {
+  return Re(function (e) {
     var t = e(document.body.clientWidth)
-    // eslint-disable-next-line no-unused-vars
-    function n() {
-      var n = document.body.clientWidth
-      n !== t && e((t = n))
+
+    if (t - 200 < 1500) {
+      t = 1300
     }
+    // eslint-disable-next-line no-unused-vars
+    // function n() {
+    //   var n = document.body.clientWidth
+    //   n !== t && e((t = n))
+    // }
     //     return (
     //       // window.addEventListener("resize", n),
     //       function() {
@@ -1356,7 +1360,7 @@ function nt() {
   })
 }
 var rt = Object.assign(
-  function(e) {
+  function (e) {
     const t = Xe(e)
     Object.defineProperties(this, {
       DOM: { value: Te, writable: !0, enumerable: !0 },
@@ -1372,7 +1376,7 @@ var rt = Object.assign(
       resolve: { value: je(Je), writable: !0, enumerable: !0 },
       svg: { value: je(Qe), writable: !0, enumerable: !0 },
       tex: { value: tt(t), writable: !0, enumerable: !0 },
-      width: { value: nt, writable: !0, enumerable: !0 }
+      width: { value: 1800, writable: !0, enumerable: !0 }
     })
   },
   { resolve: ge.resolve }
@@ -1381,13 +1385,13 @@ function it(e, t) {
   (this.message = e + ''), (this.input = t)
 }
 (it.prototype = Object.create(Error.prototype)),
-(it.prototype.name = 'RuntimeError'),
-(it.prototype.constructor = it)
+  (it.prototype.name = 'RuntimeError'),
+  (it.prototype.constructor = it)
 var ot = Array.prototype
 var at = ot.map
 var st = ot.forEach
 function lt(e) {
-  return function() {
+  return function () {
     return e
   }
 }
@@ -1399,32 +1403,32 @@ var dt = {}
 function ft(e, t, n) {
   var r
   n == null && (n = dt),
-  Object.defineProperties(this, {
-    _observer: { value: n, writable: !0 },
-    _definition: { value: mt, writable: !0 },
-    _duplicate: { value: void 0, writable: !0 },
-    _duplicates: { value: void 0, writable: !0 },
-    _indegree: { value: NaN, writable: !0 },
-    _inputs: { value: [], writable: !0 },
-    _invalidate: { value: ct, writable: !0 },
-    _module: { value: t },
-    _name: { value: null, writable: !0 },
-    _outputs: { value: new Set(), writable: !0 },
-    _promise: { value: Promise.resolve(void 0), writable: !0 },
-    _reachable: { value: n !== dt, writable: !0 },
-    _rejector: {
-      value:
+    Object.defineProperties(this, {
+      _observer: { value: n, writable: !0 },
+      _definition: { value: mt, writable: !0 },
+      _duplicate: { value: void 0, writable: !0 },
+      _duplicates: { value: void 0, writable: !0 },
+      _indegree: { value: NaN, writable: !0 },
+      _inputs: { value: [], writable: !0 },
+      _invalidate: { value: ct, writable: !0 },
+      _module: { value: t },
+      _name: { value: null, writable: !0 },
+      _outputs: { value: new Set(), writable: !0 },
+      _promise: { value: Promise.resolve(void 0), writable: !0 },
+      _reachable: { value: n !== dt, writable: !0 },
+      _rejector: {
+        value:
           ((r = this),
-          function(e) {
-            if (e === mt) throw new it(r._name + ' is not defined', r._name)
-            if (e instanceof Error && e.message) { throw new it(e.message, r._name) }
-            throw new it(r._name + ' could not be resolved', r._name)
-          })
-    },
-    _type: { value: e },
-    _value: { value: void 0, writable: !0 },
-    _version: { value: 0, writable: !0 }
-  })
+            function (e) {
+              if (e === mt) throw new it(r._name + ' is not defined', r._name)
+              if (e instanceof Error && e.message) { throw new it(e.message, r._name) }
+              throw new it(r._name + ' could not be resolved', r._name)
+            })
+      },
+      _type: { value: e },
+      _value: { value: void 0, writable: !0 },
+      _version: { value: 0, writable: !0 }
+    })
 }
 function pt(e) {
   e._module._runtime._dirty.add(e), e._outputs.add(this)
@@ -1436,7 +1440,7 @@ function mt() {
   throw mt
 }
 function vt(e) {
-  return function() {
+  return function () {
     throw new it(e + ' is defined more than once')
   }
 }
@@ -1445,43 +1449,43 @@ function bt(e, t, n) {
   var i = this._module._runtime
   if (
     (this._inputs.forEach(ht, this),
-    t.forEach(pt, this),
-    (this._inputs = t),
-    (this._definition = n),
-    (this._value = void 0),
-    n === ct ? i._variables.delete(this) : i._variables.add(this),
-    e !== this._name || r.get(e) !== this)
+      t.forEach(pt, this),
+      (this._inputs = t),
+      (this._definition = n),
+      (this._value = void 0),
+      n === ct ? i._variables.delete(this) : i._variables.add(this),
+      e !== this._name || r.get(e) !== this)
   ) {
     var o, a
     if (this._name) {
       if (this._outputs.size) {
         r.delete(this._name),
-        ((a = this._module._resolve(this._name))._outputs = this._outputs),
-        (this._outputs = new Set()),
-        a._outputs.forEach(function(e) {
-          e._inputs[e._inputs.indexOf(this)] = a
-        }, this),
-        a._outputs.forEach(i._updates.add, i._updates),
-        i._dirty.add(a).add(this),
-        r.set(this._name, a)
+          ((a = this._module._resolve(this._name))._outputs = this._outputs),
+          (this._outputs = new Set()),
+          a._outputs.forEach(function (e) {
+            e._inputs[e._inputs.indexOf(this)] = a
+          }, this),
+          a._outputs.forEach(i._updates.add, i._updates),
+          i._dirty.add(a).add(this),
+          r.set(this._name, a)
       } else if ((a = r.get(this._name)) === this) r.delete(this._name)
       else {
         if (a._type !== 3) throw new Error()
         a._duplicates.delete(this),
-        (this._duplicate = void 0),
-        a._duplicates.size === 1 &&
+          (this._duplicate = void 0),
+          a._duplicates.size === 1 &&
           ((a = a._duplicates.keys().next().value),
-          (o = r.get(this._name)),
-          (a._outputs = o._outputs),
-          (o._outputs = new Set()),
-          a._outputs.forEach(function(e) {
-            e._inputs[e._inputs.indexOf(o)] = a
-          }),
-          (a._definition = a._duplicate),
-          (a._duplicate = void 0),
-          i._dirty.add(o).add(a),
-          i._updates.add(a),
-          r.set(this._name, a))
+            (o = r.get(this._name)),
+            (a._outputs = o._outputs),
+            (o._outputs = new Set()),
+            a._outputs.forEach(function (e) {
+              e._inputs[e._inputs.indexOf(o)] = a
+            }),
+            (a._definition = a._duplicate),
+            (a._duplicate = void 0),
+            i._dirty.add(o).add(a),
+            i._updates.add(a),
+            r.set(this._name, a))
       }
     }
     if (this._outputs.size) throw new Error()
@@ -1490,31 +1494,31 @@ function bt(e, t, n) {
       ((a = r.get(e))
         ? a._type === 3
           ? ((this._definition = vt(e)),
-          (this._duplicate = n),
-          a._duplicates.add(this))
+            (this._duplicate = n),
+            a._duplicates.add(this))
           : a._type === 2
             ? ((this._outputs = a._outputs),
-            (a._outputs = new Set()),
-            this._outputs.forEach(function(e) {
-              e._inputs[e._inputs.indexOf(a)] = this
-            }, this),
-            i._dirty.add(a).add(this),
-            r.set(e, this))
+              (a._outputs = new Set()),
+              this._outputs.forEach(function (e) {
+                e._inputs[e._inputs.indexOf(a)] = this
+              }, this),
+              i._dirty.add(a).add(this),
+              r.set(e, this))
             : ((a._duplicate = a._definition),
-            (this._duplicate = n),
-            ((o = new ft(3, this._module))._name = e),
-            (o._definition = this._definition = a._definition = vt(e)),
-            (o._outputs = a._outputs),
-            (a._outputs = new Set()),
-            o._outputs.forEach(function(e) {
-              e._inputs[e._inputs.indexOf(a)] = o
-            }),
-            (o._duplicates = new Set([this, a])),
-            i._dirty.add(a).add(o),
-            i._updates.add(a).add(o),
-            r.set(e, o))
+              (this._duplicate = n),
+              ((o = new ft(3, this._module))._name = e),
+              (o._definition = this._definition = a._definition = vt(e)),
+              (o._outputs = a._outputs),
+              (a._outputs = new Set()),
+              o._outputs.forEach(function (e) {
+                e._inputs[e._inputs.indexOf(a)] = o
+              }),
+              (o._duplicates = new Set([this, a])),
+              i._dirty.add(a).add(o),
+              i._updates.add(a).add(o),
+              r.set(e, o))
         : r.set(e, this)),
-    (this._name = e)
+      (this._name = e)
   }
   return i._updates.add(this), i._compute(), this
 }
@@ -1533,28 +1537,28 @@ function wt(e) {
 }
 Object.defineProperties(ft.prototype, {
   _pending: {
-    value: function() {
+    value: function () {
       this._observer.pending && this._observer.pending()
     },
     writable: !0,
     configurable: !0
   },
   _fulfilled: {
-    value: function(e) {
+    value: function (e) {
       this._observer.fulfilled && this._observer.fulfilled(e, this._name)
     },
     writable: !0,
     configurable: !0
   },
   _rejected: {
-    value: function(e) {
+    value: function (e) {
       this._observer.rejected && this._observer.rejected(e, this._name)
     },
     writable: !0,
     configurable: !0
   },
   define: {
-    value: function(e, t, n) {
+    value: function (e, t, n) {
       switch (arguments.length) {
         case 1:
           (n = e), (e = t = null)
@@ -1573,14 +1577,14 @@ Object.defineProperties(ft.prototype, {
     configurable: !0
   },
   delete: {
-    value: function() {
+    value: function () {
       return bt.call(this, null, [], ct)
     },
     writable: !0,
     configurable: !0
   },
   import: {
-    value: function(e, t, n) {
+    value: function (e, t, n) {
       arguments.length < 3 && ((n = t), (t = e))
       return bt.call(this, t + '', [n._resolve(e + '')], ut)
     },
@@ -1588,143 +1592,143 @@ Object.defineProperties(ft.prototype, {
     configurable: !0
   }
 }),
-Object.defineProperties(_t.prototype, {
-  _copy: {
-    value: function(e, t) {
-      (e._source = this), t.set(this, e)
-      for (const [o, a] of this._scope) {
-        var n = e._scope.get(o)
-        if (!n || n._type !== 1) {
-          if (a._definition === ut) {
-            var r = a._inputs[0]
-            var i = r._module
-            e.import(
-              r._name,
-              o,
-              t.get(i) ||
+  Object.defineProperties(_t.prototype, {
+    _copy: {
+      value: function (e, t) {
+        (e._source = this), t.set(this, e)
+        for (const [o, a] of this._scope) {
+          var n = e._scope.get(o)
+          if (!n || n._type !== 1) {
+            if (a._definition === ut) {
+              var r = a._inputs[0]
+              var i = r._module
+              e.import(
+                r._name,
+                o,
+                t.get(i) ||
                 (i._source ? i._copy(new _t(e._runtime, e._builtins), t) : i)
-            )
-          } else e.define(o, a._inputs.map(wt), a._definition)
-        }
-      }
-      return e
-    },
-    writable: !0,
-    configurable: !0
-  },
-  _resolve: {
-    value: function(e) {
-      var t
-      var n = this._scope.get(e)
-      if (!n) {
-        if (((n = new ft(2, this)), this._builtins.has(e))) { n.define(e, lt(this._builtins.get(e))) } else if (this._runtime._builtin._scope.has(e)) { n.import(e, this._runtime._builtin) } else {
-          try {
-            t = this._runtime._global(e)
-          } catch (t) {
-            return n.define(
-              e,
-              ((r = t),
-              function() {
-                throw r
-              })
-            )
+              )
+            } else e.define(o, a._inputs.map(wt), a._definition)
           }
-          void 0 === t
-            ? this._scope.set((n._name = e), n)
-            : n.define(e, lt(t))
         }
-      }
-      var r
-      return n
+        return e
+      },
+      writable: !0,
+      configurable: !0
     },
-    writable: !0,
-    configurable: !0
-  },
-  redefine: {
-    value: function(e) {
-      var t = this._scope.get(e)
-      if (!t) throw new it(e + ' is not defined')
-      if (t._type === 3) throw new it(e + ' is defined more than once')
-      return t.define.apply(t, arguments)
+    _resolve: {
+      value: function (e) {
+        var t
+        var n = this._scope.get(e)
+        if (!n) {
+          if (((n = new ft(2, this)), this._builtins.has(e))) { n.define(e, lt(this._builtins.get(e))) } else if (this._runtime._builtin._scope.has(e)) { n.import(e, this._runtime._builtin) } else {
+            try {
+              t = this._runtime._global(e)
+            } catch (t) {
+              return n.define(
+                e,
+                ((r = t),
+                  function () {
+                    throw r
+                  })
+              )
+            }
+            void 0 === t
+              ? this._scope.set((n._name = e), n)
+              : n.define(e, lt(t))
+          }
+        }
+        var r
+        return n
+      },
+      writable: !0,
+      configurable: !0
     },
-    writable: !0,
-    configurable: !0
-  },
-  define: {
-    value: function() {
-      var e = new ft(1, this)
-      return e.define.apply(e, arguments)
+    redefine: {
+      value: function (e) {
+        var t = this._scope.get(e)
+        if (!t) throw new it(e + ' is not defined')
+        if (t._type === 3) throw new it(e + ' is defined more than once')
+        return t.define.apply(t, arguments)
+      },
+      writable: !0,
+      configurable: !0
     },
-    writable: !0,
-    configurable: !0
-  },
-  derive: {
-    value: function(e, t) {
-      var n = new _t(this._runtime, this._builtins)
-      return (
-        (n._source = this),
-        st.call(e, function(e) {
-          typeof e !== 'object' && (e = { name: e + '' }),
-          e.alias == null && (e.alias = e.name),
-          n.import(e.name, e.alias, t)
-        }),
-        Promise.resolve().then(() => {
-          const e = new Set([this])
-          for (const t of e) {
-            for (const n of t._scope.values()) {
-              if (n._definition === ut) {
-                const t = n._inputs[0]._module
-                const r = t._source || t
-                if (r === this) {
-                  return void console.warn(
-                    'circular module definition; ignoring'
-                  )
+    define: {
+      value: function () {
+        var e = new ft(1, this)
+        return e.define.apply(e, arguments)
+      },
+      writable: !0,
+      configurable: !0
+    },
+    derive: {
+      value: function (e, t) {
+        var n = new _t(this._runtime, this._builtins)
+        return (
+          (n._source = this),
+          st.call(e, function (e) {
+            typeof e !== 'object' && (e = { name: e + '' }),
+              e.alias == null && (e.alias = e.name),
+              n.import(e.name, e.alias, t)
+          }),
+          Promise.resolve().then(() => {
+            const e = new Set([this])
+            for (const t of e) {
+              for (const n of t._scope.values()) {
+                if (n._definition === ut) {
+                  const t = n._inputs[0]._module
+                  const r = t._source || t
+                  if (r === this) {
+                    return void console.warn(
+                      'circular module definition; ignoring'
+                    )
+                  }
+                  e.add(r)
                 }
-                e.add(r)
               }
             }
-          }
-          this._copy(n, new Map())
-        }),
-        n
-      )
+            this._copy(n, new Map())
+          }),
+          n
+        )
+      },
+      writable: !0,
+      configurable: !0
     },
-    writable: !0,
-    configurable: !0
-  },
-  import: {
-    value: function() {
-      var e = new ft(1, this)
-      return e.import.apply(e, arguments)
+    import: {
+      value: function () {
+        var e = new ft(1, this)
+        return e.import.apply(e, arguments)
+      },
+      writable: !0,
+      configurable: !0
     },
-    writable: !0,
-    configurable: !0
-  },
-  value: {
-    value: async function(e) {
-      var t = this._scope.get(e)
-      if (!t) throw new it(e + ' is not defined')
-      t._observer === dt && ((t._observer = !0), this._runtime._dirty.add(t))
-      return await this._runtime._compute(), t._promise
+    value: {
+      value: async function (e) {
+        var t = this._scope.get(e)
+        if (!t) throw new it(e + ' is not defined')
+        t._observer === dt && ((t._observer = !0), this._runtime._dirty.add(t))
+        return await this._runtime._compute(), t._promise
+      },
+      writable: !0,
+      configurable: !0
     },
-    writable: !0,
-    configurable: !0
-  },
-  variable: {
-    value: function(e) {
-      return new ft(1, this, e)
+    variable: {
+      value: function (e) {
+        return new ft(1, this, e)
+      },
+      writable: !0,
+      configurable: !0
     },
-    writable: !0,
-    configurable: !0
-  },
-  builtin: {
-    value: function(e, t) {
-      this._builtins.set(e, t)
-    },
-    writable: !0,
-    configurable: !0
-  }
-})
+    builtin: {
+      value: function (e, t) {
+        this._builtins.set(e, t)
+      },
+      writable: !0,
+      configurable: !0
+    }
+  })
 const yt =
   typeof requestAnimationFrame === 'function'
     ? requestAnimationFrame
@@ -1745,7 +1749,7 @@ function xt(e = new rt(), t = Ot) {
       _builtin: { value: n },
       _global: { value: t }
     }),
-    e)
+      e)
   ) { for (var r in e) new ft(2, n).define(r, [], e[r]) }
 }
 function Ct(e) {
@@ -1766,7 +1770,7 @@ function St(e) {
   return e._promise.catch(e._rejector)
 }
 function qt(e) {
-  return new Promise(function(t) {
+  return new Promise(function (t) {
     e._invalidate = t
   })
 }
@@ -1785,14 +1789,14 @@ function Mt(e, t) {
     ((r = new IntersectionObserver(
       ([e]) => (o = e.isIntersecting) && ((n = null), a())
     )),
-    r.observe(i),
-    e.then(() => (r.disconnect(), (r = null), s()))),
-    function(e) {
+      r.observe(i),
+      e.then(() => (r.disconnect(), (r = null), s()))),
+    function (e) {
       return o
         ? Promise.resolve(e)
         : r
           ? (n || (n = new Promise((e, t) => ((a = e), (s = t)))),
-          n.then(() => e))
+            n.then(() => e))
           : Promise.reject()
     }
   )
@@ -1803,7 +1807,7 @@ function jt(e) {
   var n = ++e._version
   var r = null
   var i = (e._promise = Promise.all(e._inputs.map(St))
-    .then(function(i) {
+    .then(function (i) {
       if (e._version === n) {
         for (var o = 0, a = i.length; o < a; ++o) {
           switch (i[o]) {
@@ -1817,8 +1821,8 @@ function jt(e) {
         return e._definition.apply(t, i)
       }
     })
-    .then(function(t) {
-      return (function(e) {
+    .then(function (t) {
+      return (function (e) {
         return (
           e && typeof e.next === 'function' && typeof e.return === 'function'
         )
@@ -1827,38 +1831,38 @@ function jt(e) {
           ? void t.return()
           : ((r || qt(e)).then(
             ((o = t),
-            function() {
-              o.return()
-            })
+              function () {
+                o.return()
+              })
           ),
-          (function(e, t, n, r) {
-            function i() {
-              var n = new Promise(function(e) {
+            (function (e, t, n, r) {
+              function i() {
+                var n = new Promise(function (e) {
+                  e(r.next())
+                }).then(function (r) {
+                  return r.done
+                    ? void 0
+                    : Promise.resolve(r.value).then(function (r) {
+                      if (e._version === t) { return Lt(e, r, n).then(i), e._fulfilled(r), r }
+                    })
+                })
+                n.catch(function (r) {
+                  e._version === t && (Lt(e, void 0, n), e._rejected(r))
+                })
+              }
+              return new Promise(function (e) {
                 e(r.next())
-              }).then(function(r) {
-                return r.done
-                  ? void 0
-                  : Promise.resolve(r.value).then(function(r) {
-                    if (e._version === t) { return Lt(e, r, n).then(i), e._fulfilled(r), r }
-                  })
+              }).then(function (e) {
+                if (!e.done) return n.then(i), e.value
               })
-              n.catch(function(r) {
-                e._version === t && (Lt(e, void 0, n), e._rejected(r))
-              })
-            }
-            return new Promise(function(e) {
-              e(r.next())
-            }).then(function(e) {
-              if (!e.done) return n.then(i), e.value
-            })
-          })(e, n, i, t))
+            })(e, n, i, t))
         : t
     }))
   i.then(
-    function(t) {
+    function (t) {
       e._version === n && ((e._value = t), e._fulfilled(t))
     },
-    function(t) {
+    function (t) {
       e._version === n && ((e._value = void 0), e._rejected(t))
     }
   )
@@ -1874,23 +1878,23 @@ function Lt(e, t, n) {
 }
 function kt(e, t) {
   e._invalidate(),
-  (e._invalidate = ct),
-  e._pending(),
-  ++e._version,
-  (e._indegree = NaN),
-  (e._promise = Promise.reject(t)).catch(ct),
-  (e._value = void 0),
-  e._rejected(t)
+    (e._invalidate = ct),
+    e._pending(),
+    ++e._version,
+    (e._indegree = NaN),
+    (e._promise = Promise.reject(t)).catch(ct),
+    (e._value = void 0),
+    e._rejected(t)
 }
 function Ot(e) {
   return window[e]
 }
 Object.defineProperties(xt, {
   load: {
-    value: function(e, t, n) {
+    value: function (e, t, n) {
       if (
         (typeof t === 'function' && ((n = t), (t = null)),
-        typeof n !== 'function')
+          typeof n !== 'function')
       ) { throw new Error('invalid observer') }
       t == null && (t = new rt())
       const { modules: r, id: i } = e
@@ -1910,7 +1914,7 @@ Object.defineProperties(xt, {
             : t === s
               ? t.variable(n(i, r, e.variables)).define(i.name, i.inputs, i.value)
               : t.define(i.name, i.inputs, i.value),
-          ++r
+            ++r
         }
       }
       return a
@@ -1919,122 +1923,122 @@ Object.defineProperties(xt, {
     configurable: !0
   }
 }),
-Object.defineProperties(xt.prototype, {
-  _compute: {
-    value: function() {
-      return this._computing || (this._computing = this._computeSoon())
+  Object.defineProperties(xt.prototype, {
+    _compute: {
+      value: function () {
+        return this._computing || (this._computing = this._computeSoon())
+      },
+      writable: !0,
+      configurable: !0
     },
-    writable: !0,
-    configurable: !0
-  },
-  _computeSoon: {
-    value: function() {
-      var e = this
-      return new Promise(function(t) {
-        yt(function() {
-          t(), e._disposed || e._computeNow()
+    _computeSoon: {
+      value: function () {
+        var e = this
+        return new Promise(function (t) {
+          yt(function () {
+            t(), e._disposed || e._computeNow()
+          })
         })
-      })
+      },
+      writable: !0,
+      configurable: !0
     },
-    writable: !0,
-    configurable: !0
-  },
-  _computeNow: {
-    value: function() {
-      var e
-      var t
-      var n = [];
-      (e = new Set(this._dirty)).forEach(function(t) {
-        t._inputs.forEach(e.add, e)
-        const n = (function(e) {
-          if (e._observer !== dt) return !0
-          var t = new Set(e._outputs)
-          for (const e of t) {
+    _computeNow: {
+      value: function () {
+        var e
+        var t
+        var n = [];
+        (e = new Set(this._dirty)).forEach(function (t) {
+          t._inputs.forEach(e.add, e)
+          const n = (function (e) {
             if (e._observer !== dt) return !0
-            e._outputs.forEach(t.add, t)
-          }
-          return !1
-        })(t)
-        n > t._reachable
-          ? this._updates.add(t)
-          : n < t._reachable && t._invalidate(),
-        (t._reachable = n)
-      }, this),
-      (e = new Set(this._updates)).forEach(function(t) {
-        t._reachable
-          ? ((t._indegree = 0), t._outputs.forEach(e.add, e))
-          : ((t._indegree = NaN), e.delete(t))
-      }),
-      (this._computing = null),
-      this._updates.clear(),
-      this._dirty.clear(),
-      e.forEach(function(e) {
-        e._outputs.forEach(Nt)
-      })
-      do {
-        for (
-          e.forEach(function(e) {
-            e._indegree === 0 && n.push(e)
-          });
-          (t = n.pop());
+            var t = new Set(e._outputs)
+            for (const e of t) {
+              if (e._observer !== dt) return !0
+              e._outputs.forEach(t.add, t)
+            }
+            return !1
+          })(t)
+          n > t._reachable
+            ? this._updates.add(t)
+            : n < t._reachable && t._invalidate(),
+            (t._reachable = n)
+        }, this),
+          (e = new Set(this._updates)).forEach(function (t) {
+            t._reachable
+              ? ((t._indegree = 0), t._outputs.forEach(e.add, e))
+              : ((t._indegree = NaN), e.delete(t))
+          }),
+          (this._computing = null),
+          this._updates.clear(),
+          this._dirty.clear(),
+          e.forEach(function (e) {
+            e._outputs.forEach(Nt)
+          })
+        do {
+          for (
+            e.forEach(function (e) {
+              e._indegree === 0 && n.push(e)
+            });
+            (t = n.pop());
 
-        ) { jt(t), t._outputs.forEach(r), e.delete(t) }
-        e.forEach(function(t) {
-          Ct(t) &&
+          ) { jt(t), t._outputs.forEach(r), e.delete(t) }
+          e.forEach(function (t) {
+            Ct(t) &&
               (kt(t, new it('circular definition')),
-              t._outputs.forEach(Pt),
-              e.delete(t))
-        })
-      } while (e.size)
-      function r(e) {
-        --e._indegree == 0 && n.push(e)
-      }
+                t._outputs.forEach(Pt),
+                e.delete(t))
+          })
+        } while (e.size)
+        function r(e) {
+          --e._indegree == 0 && n.push(e)
+        }
+      },
+      writable: !0,
+      configurable: !0
     },
-    writable: !0,
-    configurable: !0
-  },
-  dispose: {
-    value: function() {
-      (this._computing = Promise.resolve()),
-      (this._disposed = !0),
-      this._variables.forEach(e => {
-        e._invalidate(), (e._version = NaN)
-      })
+    dispose: {
+      value: function () {
+        (this._computing = Promise.resolve()),
+          (this._disposed = !0),
+          this._variables.forEach(e => {
+            e._invalidate(), (e._version = NaN)
+          })
+      },
+      writable: !0,
+      configurable: !0
     },
-    writable: !0,
-    configurable: !0
-  },
-  module: {
-    value: function(e, t = ct) {
-      let n
-      if (void 0 === e)
-      // eslint-disable-next-line no-cond-assign
-      { return (n = this._init) ? ((this._init = null), n) : new _t(this) }
-      if (((n = this._modules.get(e)), n)) return n;
-      (this._init = n = new _t(this)), this._modules.set(e, n)
-      try {
-        e(this, t)
-      } finally {
-        this._init = null
-      }
-      return n
+    module: {
+      value: function (e, t = ct) {
+        let n
+        if (void 0 === e)
+        // eslint-disable-next-line no-cond-assign
+        { return (n = this._init) ? ((this._init = null), n) : new _t(this) }
+        if (((n = this._modules.get(e)), n)) return n;
+        (this._init = n = new _t(this)), this._modules.set(e, n)
+        try {
+          e(this, t)
+        } finally {
+          this._init = null
+        }
+        return n
+      },
+      writable: !0,
+      configurable: !0
     },
-    writable: !0,
-    configurable: !0
-  },
-  fileAttachments: {
-    value: function(e) {
-      return Object.assign(
-        t => {
-          const n = e((t += ''))
-          if (n == null) throw new Error('File not found: ' + t)
-          return new FileAttachment(n, t)
-        },
-        { prototype: FileAttachment.prototype }
-      )
-    },
-    writable: !0,
-    configurable: !0
-  }
-})
+    fileAttachments: {
+      value: function (e) {
+        return Object.assign(
+          t => {
+            const n = e((t += ''))
+            if (n == null) throw new Error('File not found: ' + t)
+            return new FileAttachment(n, t)
+          },
+          { prototype: FileAttachment.prototype }
+        )
+      },
+      writable: !0,
+      configurable: !0
+    }
+  })
 export { le as Inspector, rt as Library, xt as Runtime, it as RuntimeError }

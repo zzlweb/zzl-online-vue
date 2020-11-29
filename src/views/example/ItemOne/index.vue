@@ -230,26 +230,25 @@ export default {
 
 <style lang="scss" scoped>
 .map-container {
-  overflow: hidden;
-  height: 1060px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: calc( 100vh - 50px);
   position: relative;
   background: rgba(12, 12, 12, 0.102);
   padding: 50px 0 50px 50px;
 
-  .title-container {
-    margin-bottom: 80px;
-  }
-
   .map-apart {
-    height: 1900px;
-    width: 1900px;
-    margin-top: 80px;
+    height: 1200px;
+    width: 1440px;
     overflow: hidden;
-    padding-bottom: 100px;
-    position: relative;
+    position: absolute;
+    right: 0;
+    top: 0;
 
     >>> canvas {
-      width: 1900px !important;
+      position: absolute;
+      right:0;
+      width: 1800px !important;
     }
 
     .china_tag,
@@ -269,52 +268,8 @@ export default {
         z-index: 10;
       }
     }
-
-    // .out-layer {
-    //   position: absolute;
-    //   width: 100%;
-    //   height: 100%;
-    //   border-radius: 50%;
-    //   border: 2px solid #fff;
-    //   top: 50%;
-    //   left: 50%;
-    //   transform: translate(-50%, -50%);
-    // }
-
-    // .inside-layer {
-    //   position: absolute;
-    //   width: 400px;
-    //   height: 400px;
-    //   border-radius: 50%;
-    //   border: 2px solid #fff;
-    //   top: 50%;
-    //   left: 50%;
-    //   transform: translate(-50%, -50%);
-    //   z-index: 2;
-    // }
-
-    // .middle-layer {
-    //   position: absolute;
-    //   width: 1000px;
-    //   height: 1000px;
-    //   border-radius: 50%;
-    //   border: 2px solid #fff;
-    //   top: 50%;
-    //   left: 50%;
-    //   transform: translate(-50%, -50%);
-    // }
   }
 
-  @media screen and (max-width: 1300px) {
-    .map-apart {
-      width: 1600px;
-      height: 1600px;
-
-      >>> canvas {
-        width: 1600px !important;
-      }
-    }
-  }
   .tagItem {
     width: 970px;
     height: 40px;
@@ -416,8 +371,8 @@ export default {
     }
 
     &.Wuhan {
-      left: 80px;
-      top: 690px;
+      left: 40px;
+      top: 460px;
 
       .Tag {
         // border-bottom: 4px solid transparent;
@@ -444,8 +399,8 @@ export default {
     }
 
     &.shanghai {
-      left: 200px;
-      top: 685px;
+      left: 150px;
+      top: 540px;
 
       .Tag {
         // border-bottom: 4px solid #0091bd;
@@ -471,7 +426,7 @@ export default {
 
     &.XiusiDun {
       left: 80px;
-      top: 800px;
+      top: 400px;
 
       .Tag {
         // border-image: url("../../assets/svg/sekuai3.svg") 3.4 4 round;
@@ -498,7 +453,7 @@ export default {
 
     &.shouer {
       left: 220px;
-      top: 370px;
+      top: 170px;
 
       .Tag {
         // border-image: url("../../assets/svg/sekuai3.svg") 3.4 4 round;
@@ -524,8 +479,8 @@ export default {
     }
 
     &.DongJing {
-      left: 110px;
-      top: 630px;
+      left: 40px;
+      top:430px;
 
       .Tag {
         // border-image: url("../../assets/svg/sekuai3.svg") 3.4 4 round;
@@ -552,7 +507,7 @@ export default {
 
     &.jilongpo {
       left: 0px;
-      top: 630px;
+      top: 450px;
 
       .Tag {
         // border-image: url("../../assets/svg/sekuai3.svg") 3.4 4 round;
@@ -579,11 +534,9 @@ export default {
 
     &.moerben {
       left: 30px;
-      top: 700px;
+      top: 500px;
 
       .Tag {
-        // border-image: url("../../assets/svg/sekuai3.svg") 3.4 4 round;
-        // border-bottom: 4px solid transparent;
         opacity: 0;
       }
 
@@ -606,11 +559,9 @@ export default {
 
     &.huasha {
       left: 30px;
-      top: 700px;
+      top: 500px;
 
       .Tag {
-        // border-image: url("../../assets/svg/sekuai3.svg") 3.4 4 round;
-        // border-bottom: 4px solid transparent;
         opacity: 0;
       }
 
@@ -636,8 +587,6 @@ export default {
       top: 700px;
 
       .Tag {
-        // border-image: url("../../assets/svg/sekuai3.svg") 3.4 4 round;
-        // border-bottom: 4px solid transparent;
         opacity: 0;
       }
 
@@ -659,12 +608,10 @@ export default {
     }
 
     &.dibai {
-      left: 210px;
-      top: 700px;
+      left: 170px;
+      top: 500px;
 
       .Tag {
-        // border-image: url("../../assets/svg/sekuai3.svg") 3.4 4 round;
-        // border-bottom: 4px solid transparent;
         opacity: 0;
       }
 
@@ -685,8 +632,21 @@ export default {
       }
     }
   }
+   @media screen and (max-width: 1500px) {
+       .map-apart {
+    height: 1000px;
+    width: 1240px;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
 
-  @media screen and (max-width: 1300px) {
+    >>> canvas {
+      position: absolute;
+      right:0;
+      width: 1800px !important;
+    }
+  }
     .tagItem {
       width: 750px;
       .Tag::after {
@@ -694,28 +654,46 @@ export default {
       }
 
       &.Wuhan {
-        top: 600px;
+        left: 300px;
+        top: 480px;
       }
       &.shanghai {
-        top: 650px;
+        left: 350px;
+        top: 550px;
       }
+      &.shouer{
+        left:400px;
+        top:280px;
+      }
+
+      &.DongJing{
+        left:300px
+      }
+
+      &.huasha{
+        left: 400px;
+      }
+
       &.XiusiDun {
-        top: 700px;
+        top: 500px;
+        left: 150px;
       }
       &.jilongpo {
         left: 50px;
       }
       &.moerben {
-        top: 600px;
+        top: 500px;
+        left:300px;
       }
       &.huasha {
         top: 600px;
       }
       &.kailuo {
         top: 600px;
+        left: 200px;
       }
       &.dibai {
-        top: 600px;
+        top: 400px;
       }
     }
   }

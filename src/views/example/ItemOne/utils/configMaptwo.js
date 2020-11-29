@@ -1,18 +1,5 @@
 // https://observablehq.com/@mariaclee1/world-tour@522
 const mapJson = require('./country.json')
-// const mapJson = JSON.parse(localStorage.getItem("country"));
-// eslint-disable-next-line no-unused-vars
-// let aa;
-// Object.defineProperty(aa, {
-//   get: function() {
-//     return aa;
-//   },
-//   set(value) {
-//     aa = value;
-//     // id 改变调用函数
-//     return define(aa);
-//   }
-// });
 import * as D3 from 'd3'
 const topJson = require('./topjson')
 
@@ -53,8 +40,8 @@ function define(runtime, observer) {
         // context.translate();
         const projection = d3.geoOrthographic().fitExtent(
           [
-            [160, 160],
-            [width - 160, height - 160]
+            [0, 0],
+            [width, height]
           ],
           sphere
         )
@@ -273,7 +260,6 @@ function define(runtime, observer) {
                     USApart.classList.add('active')
 
                     // CONCORD
-
                     const XiusiDun = document.querySelector('.XiusiDun')
 
                     // 定义美国标签数组
@@ -529,7 +515,7 @@ function define(runtime, observer) {
   main
     .variable(observer('height'))
     .define('height', ['width'], function(width) {
-      return Math.min(width, 1900)
+      return Math.min(width, 1600)
     })
   main.variable(observer('tilt')).define('tilt', function() {
     return 20
@@ -565,11 +551,5 @@ function define(runtime, observer) {
   })
   return main
 }
-
-// function getCountry(value = "") {
-//   // 获取当前的城市名称
-//   console.log(value);
-//   aa = value;
-// }
 
 export { define }
