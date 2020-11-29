@@ -49,11 +49,11 @@ const actions = {
         const { data } = response
 
         if (!data) {
-          return reject('Verification failed, please Login again.')
+          return reject('验证错误,请重新登录')
         }
 
         const { name, avatar } = data
-
+        console.log(name, avatar)
         commit('SET_NAME', name)
         commit('SET_AVATAR', avatar)
         resolve(data)
