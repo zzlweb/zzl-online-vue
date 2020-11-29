@@ -245,9 +245,13 @@ export default {
     right: 0;
     top: 0;
 
+    .observablehq--function.observablehq--inspect{
+      display: none;
+    }
+
     >>> canvas {
       position: absolute;
-      right:0;
+      left:0;
       width: 1800px !important;
     }
 
