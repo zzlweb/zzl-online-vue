@@ -209,6 +209,7 @@ export default {
       this.screenWidth = document.documentElement.clientWidth // 窗口宽度
       this.screenHeight = document.documentElement.clientHeight // 窗口高度
     }
+    document.querySelector('.observablehq').style.display = 'block'
   },
   methods: {
     onChange(value) {
@@ -245,11 +246,15 @@ export default {
     right: 0;
     top: 0;
 
-    .observablehq--function.observablehq--inspect{
+    ::v-deep .observablehq{
       display: none;
+
+      &:nth-child(1){
+        display: block;
+      }
     }
 
-    >>> canvas {
+    canvas {
       position: absolute;
       left:0;
       width: 1800px !important;
