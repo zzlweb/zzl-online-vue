@@ -208,13 +208,22 @@
           />
 
           <!-- 左2 -->
-          <!-- <path
-            id="path-three"
-            class="group"
-            d="M187,300 L187.98,375"
+          <path
+            id="path-two"
+            class="st11"
+            d="M302.3,359.4 L288.2,306 c-2.4-4.6-7.2-7.5-12.4-7.5h-82.4c-4.4,0-8,3.6-8,8v63.9
+			l0,0"
             stroke="url(#linearGradient-10)"
-            stroke-width="12"
-          /> -->
+            stroke-width="6"
+          />
+
+          <path
+            class="st11"
+            d="M302.3,359.4 L288.2,306 c-2.4-4.6-7.2-7.5-12.4-7.5h-82.4c-4.4,0-8,3.6-8,8v63.9
+			l0,0"
+            stroke="url(#linearGradient-10)"
+            stroke-width="6"
+          />
           <!-- 1 -->
           <g id="circle-one" transform="translate(147.000000, 460.000000)">
             <circle id="椭圆形" fill="#D1DAFF" cx="9.5" cy="9.5" r="5.5">
