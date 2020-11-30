@@ -642,7 +642,7 @@ export default {
     }
   }
    @media screen and (max-width: 1500px) {
-       .map-apart {
+      .map-apart {
     height: 1000px;
     width: 1240px;
     overflow: hidden;

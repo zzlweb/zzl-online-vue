@@ -2,6 +2,7 @@
   <div class="login-page flex-col">
     <div class="login-container flex-row">
       <div class="left-part">
+        <svgDesign />
         <span>作品展示</span>
       </div>
 
@@ -61,8 +62,13 @@
 
 <script>
 import { validUsername } from '@/utils/validate'
+import svgDesign from './component/svg'
+
 export default {
   name: 'Login',
+  components: {
+    svgDesign
+  },
   data() {
     const validateUsername = (rule, value, callback) => {
       if (!validUsername(value)) {
@@ -152,7 +158,7 @@ export default {
     .left-part {
       width: 762px;
       height: 740px;
-      background: url("../../assets/svg/fengmiantu.svg");
+      // background: url("../../assets/svg/fengmiantu.svg");
       position: relative;
 
       span {
