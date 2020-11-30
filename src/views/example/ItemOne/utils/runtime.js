@@ -1344,8 +1344,9 @@ function nt() {
     var t = e(document.body.clientWidth)
 
     if (t - 200 < 1500) {
-      t = 1300
+      t = 1600
     }
+
     // eslint-disable-next-line no-unused-vars
     // function n() {
     //   var n = document.body.clientWidth
@@ -1376,7 +1377,7 @@ var rt = Object.assign(
       resolve: { value: je(Je), writable: !0, enumerable: !0 },
       svg: { value: je(Qe), writable: !0, enumerable: !0 },
       tex: { value: tt(t), writable: !0, enumerable: !0 },
-      width: { value: 1800, writable: !0, enumerable: !0 }
+      width: { value: nt, writable: !0, enumerable: !0 }
     })
   },
   { resolve: ge.resolve }

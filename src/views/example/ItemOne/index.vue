@@ -650,10 +650,10 @@ export default {
     right: 0;
     top: 0;
 
-    >>> canvas {
+    canvas {
       position: absolute;
-      right:0;
-      width: 1800px !important;
+      left:0;
+      width: 1600px !important;
     }
   }
     .tagItem {
