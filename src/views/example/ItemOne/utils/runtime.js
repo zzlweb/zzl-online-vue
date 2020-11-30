@@ -1377,7 +1377,7 @@ var rt = Object.assign(
       resolve: { value: je(Je), writable: !0, enumerable: !0 },
       svg: { value: je(Qe), writable: !0, enumerable: !0 },
       tex: { value: tt(t), writable: !0, enumerable: !0 },
-      width: { value: nt, writable: !0, enumerable: !0 }
+      width: { value: 1800, writable: !0, enumerable: !0 }
     })
   },
   { resolve: ge.resolve }
