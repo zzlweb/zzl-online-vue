@@ -13,8 +13,10 @@
   },
   "dependencies": {
     "axios": "0.18.1",
+    "between.js": "^0.1.2-fix.2",
     "core-js": "3.6.5",
     "d3": "^6.2.0",
+    "draggabilly": "^2.3.0",
     "element-ui": "2.13.2",
     "gsap": "^3.5.1",
     "js-cookie": "2.2.0",
@@ -22,10 +24,9 @@
     "nprogress": "0.2.0",
     "path-to-regexp": "2.4.0",
     "vue": "2.6.10",
+    "vue-amap": "^0.5.10",
     "vue-router": "3.0.6",
-    "vuex": "3.1.0",
-    "draggabilly": "^2.3.0",
-    "between.js": "^0.1.2-fix.2"
+    "vuex": "3.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "4.4.4",

@@ -46,6 +46,9 @@ module.exports = {
       alias: {
         '@': resolve('src')
       }
+    },
+    externals: {
+      AMap: 'AMap' // 地图配置
     }
   },
   chainWebpack(config) {
