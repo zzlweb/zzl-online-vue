@@ -63,6 +63,76 @@ export default {
         ],
         [
           {
+            x: 121.501775,
+            y: 31.302331
+          },
+          {
+            x: 121.505949,
+            y: 31.195747
+          }
+        ],
+        [
+          {
+            x: 121.467023,
+            y: 31.21214
+          },
+          {
+            x: 121.505949,
+            y: 31.195747
+          }
+        ],
+        [
+          {
+            x: 121.442819,
+            y: 31.216545
+          },
+          {
+            x: 121.505949,
+            y: 31.195747
+          }
+        ],
+        [
+          {
+            x: 121.422219,
+            y: 31.178955
+          },
+          {
+            x: 121.505949,
+            y: 31.195747
+          }
+        ],
+        [
+          {
+            x: 121.453301,
+            y: 31.191176
+          },
+          {
+            x: 121.505949,
+            y: 31.195747
+          }
+        ],
+        [
+          {
+            x: 121.52849,
+            y: 31.308346
+          },
+          {
+            x: 121.505949,
+            y: 31.195747
+          }
+        ],
+        [
+          {
+            x: 121.517738,
+            y: 31.273187
+          },
+          {
+            x: 121.505949,
+            y: 31.195747
+          }
+        ],
+        [
+          {
             x: 121.486367,
             y: 31.202432
           },
@@ -338,28 +408,29 @@ export default {
 
       var n = 180
       const that = this
-
-      setInterval(() => {
-        n--
-        if (n === 0) {
-          n = 180
-        } else {
-          var point = that.map.lngLatToGeodeticCoord(
-            that.computeBezier(points, numberOfPoints, minHeight)[n]
-          )
-          pointsGeo.vertices[0] = AMap.Util.format(point.x, 3)
-          pointsGeo.vertices[1] = AMap.Util.format(point.y, 3)
-          pointsGeo.vertices[2] = -that.getEllipseHeight(
-            numberOfPoints,
-            height,
-            minHeight
-          )[n]
-          // pointsGeo.pointSizes.push(30);
-          // pointsGeo.vertexColors.push(0, 0.209, 0.099, 0.087);
-          points3D.needUpdate = true
-          points3D.reDraw()
-        }
-      }, Math.random() * 30)
+      setTimeout(() => {
+        setInterval(() => {
+          n--
+          if (n === 0) {
+            n = 180
+          } else {
+            var point = that.map.lngLatToGeodeticCoord(
+              that.computeBezier(points, numberOfPoints, minHeight)[n]
+            )
+            pointsGeo.vertices[0] = AMap.Util.format(point.x, 3)
+            pointsGeo.vertices[1] = AMap.Util.format(point.y, 3)
+            pointsGeo.vertices[2] = -that.getEllipseHeight(
+              numberOfPoints,
+              height,
+              minHeight
+            )[n]
+            // pointsGeo.pointSizes.push(30);
+            // pointsGeo.vertexColors.push(0, 0.209, 0.099, 0.087);
+            points3D.needUpdate = true
+            points3D.reDraw()
+          }
+        }, Math.random() * 30)
+      }, Math.random() * 10)
 
       object3Dlayer.add(points3D)
 
