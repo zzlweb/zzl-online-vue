@@ -215,7 +215,7 @@
 
           <!-- 左2 -->
           <path
-            id="path-two"
+            id="path-three"
             class="st11"
             d="M302.3,359.4 L288.2,306 c-2.4-4.6-7.2-7.5-12.4-7.5h-82.4c-4.4,0-8,3.6-8,8v63.9
 			l0,0"
@@ -289,6 +289,12 @@ export default {}
 
 <style lang="scss" scoped>
 #path-one {
+  stroke-dasharray: 480 960;
+  stroke-dashoffset: 480;
+  animation: path-1 4s linear infinite;
+}
+
+#path-three {
   stroke-dasharray: 480 960;
   stroke-dashoffset: 480;
   animation: path-1 3s linear infinite;
