@@ -51,7 +51,7 @@ export const constantRoutes = [
       path: 'dashboard',
       name: '首页',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: '首页', icon: 'dashboard' }
+      meta: { title: '首页', icon: 'el-icon-s-home' }
     }]
   },
 
@@ -60,25 +60,31 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/example/ItemOne',
     name: 'Example',
-    meta: { title: '交互效果展示', icon: 'el-icon-s-help' },
+    meta: { title: '效果展示', icon: 'el-icon-menu' },
     children: [
       {
         path: 'ItemOne',
         name: 'ItemOne',
         component: () => import('@/views/example/ItemOne/index'),
-        meta: { title: '效果展示一', icon: 'el-icon-share' }
+        meta: { title: 'D3效果', icon: 'el-icon-map-location' }
       },
       {
         path: 'ItemTwo',
         name: 'ItemTwo',
         component: () => import('@/views/example/ItemTwo/index'),
-        meta: { title: '效果展示二', icon: 'el-icon-share' }
+        meta: { title: '拖拽效果', icon: 'el-icon-s-operation' }
       },
+      // {
+      //   path: 'ItemThree',
+      //   name: 'ItemThree',
+      //   component: () => import('@/views/example/ItemThree/index'),
+      //   meta: { title: '高德地图', icon: 'el-icon-location-outline' }
+      // },
       {
-        path: 'ItemThree',
-        name: 'ItemThree',
-        component: () => import('@/views/example/ItemThree/index'),
-        meta: { title: '效果展示三', icon: 'el-icon-share' }
+        path: 'ItemFour',
+        name: 'ItemFour',
+        component: () => import('@/views/example/ItemFour/index'),
+        meta: { title: 'ECharts', icon: 'el-icon-pie-chart' }
       }
     ]
   },

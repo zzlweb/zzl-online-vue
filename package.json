@@ -17,6 +17,7 @@
     "core-js": "3.6.5",
     "d3": "^6.2.0",
     "draggabilly": "^2.3.0",
+    "echarts": "^5.0.0",
     "element-ui": "2.13.2",
     "gsap": "^3.5.1",
     "js-cookie": "2.2.0",

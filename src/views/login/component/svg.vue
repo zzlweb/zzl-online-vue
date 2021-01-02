@@ -303,7 +303,7 @@ export default {}
 #path-two {
   stroke-dasharray: 458 458;
   stroke-dashoffset: 458;
-  animation: path-2 6s infinite;
+  animation: path-2 6s linear infinite;
 }
 
 @keyframes path-1 {
