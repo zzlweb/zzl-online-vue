@@ -96,7 +96,7 @@ export default {
   },
 
   mounted() {
-    this.release()
+    // this.release()
     this.drag()
   },
   methods: {

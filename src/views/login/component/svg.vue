@@ -8,7 +8,6 @@
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
     >
-      <title>icon/fengmiantu</title>
       <defs>
         <rect id="path-1" x="0" y="0" width="762" height="740" />
         <linearGradient

@@ -1,5 +1,5 @@
 <template>
-  <div class="chart-container flex-col">
+  <div id="chartConainer" class="chart-container flex-col">
     <div class="item-container flex-row">
       <div class="left-container fill-flex">
         <div id="chart-box" />
@@ -26,10 +26,12 @@
 <script>
 import * as echarts from 'echarts'
 import drawChart from './utils/charts1.js'
-
+// import chartResize from './mixins/chartResize'
 export default {
+  // mixins: [chartResize],
   data() {
     return {
+      // 页面宽度
       lineData: {
         axisData: [
           '10:00',
@@ -92,23 +94,35 @@ export default {
     }
   },
   mounted() {
-    this.drawLine()
-    this.drawPieChart()
+    const myChart = echarts.init(document.getElementById('chart-box'))
+    const pieChart = echarts.init(document.getElementById('rightPieChart'))
+
+    this.drawLine(myChart)
+    this.drawPieChart(pieChart)
+    this.handleReszie(myChart, pieChart)
   },
   methods: {
-    drawLine() { // 基于准备好的dom，初始化echarts实例
-      const myChart = echarts.init(document.getElementById('chart-box'))
+    drawLine(myChart) {
       // 绘制图表
       const lineChartOption = drawChart.getlineChartOption(this.lineData)
-
       myChart.setOption(lineChartOption)
     },
-    drawPieChart() {
-      const pieChart = echarts.init(
-        document.getElementById('rightPieChart')
-      )
+    drawPieChart(pieChart) {
       const pieChartOption = drawChart.getpieChartOption(this.pieData)
       pieChart.setOption(pieChartOption)
+    },
+    handleReszie(myChart, pieChart) {
+      let timer = null
+      window.addEventListener('resize', () => {
+        if (timer) {
+          clearTimeout(timer)
+        }
+
+        timer = setTimeout(function() {
+          myChart.resize()
+          pieChart.resize()
+        }, 100)
+      })
     }
   }
 }
@@ -118,7 +132,7 @@ export default {
 .chart-container {
   width: 100%;
   height: 100%;
-  background-color:  #23262b;
+  background-color: #23262b;
 
   #rightPieChart {
     background: transparent;
@@ -127,7 +141,8 @@ export default {
   .item-container {
     height: 350px;
     margin: 20px;
-    background: url("../../../assets/images/chartImg/liuliangjiance-bg.png") no-repeat center;
+    background: url("../../../assets/images/chartImg/liuliangjiance-bg.png")
+      no-repeat center;
     border-radius: 4px;
 
     .left-container {
@@ -164,7 +179,8 @@ export default {
         height: 170px;
         align-items: center;
         justify-content: center;
-        background: url("../../../assets/images/chartImg/pie-bg.png") top center no-repeat;
+        background: url("../../../assets/images/chartImg/pie-bg.png") top center
+          no-repeat;
         background-size: 100% 100%;
 
         .common-info-item {

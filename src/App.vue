@@ -4,7 +4,7 @@
 
     <div v-else class="flex-col resize-container">
       <img src="./assets/svg/warning.svg" alt="">
-      <div class="alert-text">请在PC端打开</div>
+      <div class="alert-text">设备不支持</div>
     </div>
   </div>
 </template>
@@ -20,7 +20,6 @@ export default {
   },
   watch: {
     screenWidth(val) {
-      console.log(val)
       val < 1100 ? this.flag = false : this.flag = true
     }
   },
