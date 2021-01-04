@@ -69,7 +69,18 @@ export default {
 
   .el-submenu{
     .el-menu-item.is-active{
-      border-right: 4px solid $primary-color !important;
+      position: relative;
+
+      &::after{
+        content: '';
+        position: absolute;
+        width: 4px;
+        background-color: $primary-color;
+        right: 0;
+        top: 0;
+        height: 100%;
+      }
+      // border-right: 4px solid $primary-color !important;
       background: rgba(50,71,154,0.05) !important;
     }
   }

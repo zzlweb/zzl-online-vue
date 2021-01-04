@@ -6,8 +6,8 @@
 
     <div class="right-menu">
       <el-dropdown class="avatar-container" trigger="click" placement="bottom-end">
-        <div class="avatar-wrapper">
-          <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
+        <div class="avatar-wrapper flex-row">
+          <img src="@/assets/images/touxiang.jpg" draggable="false" class="user-avatar">
           <i class="el-icon-caret-bottom" />
         </div>
         <el-dropdown-menu slot="dropdown" class="user-dropdown">
@@ -107,23 +107,26 @@ export default {
 
     .avatar-container {
       margin-right: 30px;
+      padding-top: 5px;
 
       .avatar-wrapper {
-        margin-top: 5px;
         position: relative;
+        align-items: center;
+        border: 1px solid #ccc;
+        border-radius: 50%;
 
         .user-avatar {
           cursor: pointer;
           width: 40px;
           height: 40px;
-          border-radius: 10px;
+          border-radius: 50%;
+          overflow:hidden;
         }
 
         .el-icon-caret-bottom {
           cursor: pointer;
           position: absolute;
           right: -20px;
-          top: 25px;
           font-size: 12px;
         }
       }

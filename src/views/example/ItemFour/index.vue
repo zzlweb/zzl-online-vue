@@ -27,6 +27,8 @@
 import * as echarts from 'echarts'
 import drawChart from './utils/charts1.js'
 // import chartResize from './mixins/chartResize'
+import _ from 'lodash'
+
 export default {
   // mixins: [chartResize],
   data() {
@@ -113,7 +115,7 @@ export default {
     },
     handleReszie(myChart, pieChart) {
       let timer = null
-      window.addEventListener('resize', () => {
+      window.addEventListener('resize', _.throttle(() => {
         if (timer) {
           clearTimeout(timer)
         }
@@ -122,7 +124,7 @@ export default {
           myChart.resize()
           pieChart.resize()
         }, 100)
-      })
+      }))
     }
   }
 }
