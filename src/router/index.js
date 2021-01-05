@@ -64,6 +64,19 @@ export const constantRoutes = [
       }
     ]
   },
+
+  {
+    path: '/form',
+    name: 'form',
+    component: Layout,
+    redirect: '/form/index',
+    children: [{
+      path: 'index',
+      component: () => import('@/views/form/index'),
+      meta: { title: '表单', icon: 'form' }
+    }]
+  },
+
   { path: '*', redirect: '/404', hidden: true }
 ]
 

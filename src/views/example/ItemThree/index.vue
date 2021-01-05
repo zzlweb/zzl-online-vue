@@ -260,7 +260,7 @@ export default {
 
       // 地图加载完成执行
       this.map.on('complete', () => {
-        console.log('地图加载完成！')
+        // console.log('地图加载完成！')
         this.generateMeshLine(this.pointArr)
         this.getPoint()
         this.startRotationAnimation()

@@ -20,16 +20,21 @@
         </div>
       </div>
     </div>
+
+    <chart-one />
   </div>
 </template>
 
 <script>
 import * as echarts from 'echarts'
 import drawChart from './utils/charts1.js'
-// import chartResize from './mixins/chartResize'
 import _ from 'lodash'
-
+// import chartResize from './mixins/chartResize'
+import ChartsOne from './component/charts1'
 export default {
+  components: {
+    'chart-one': ChartsOne
+  },
   // mixins: [chartResize],
   data() {
     return {
@@ -132,7 +137,6 @@ export default {
 
 <style lang="scss" scoped>
 .chart-container {
-  width: 100%;
   height: 100%;
   background-color: #23262b;
 

@@ -101,8 +101,9 @@ export default {
   },
   methods: {
     drag() {
-      const strip = new Strip(this.$refs.stripOuter)
-      console.log(strip)
+      // eslint-disable-next-line no-unused-vars
+      var strip = new Strip(this.$refs.stripOuter)
+      // console.log(strip)
     },
     release() {
       const cursor = new CursorFx(this.$refs.cursor)
@@ -121,8 +122,8 @@ export default {
 
 <style lang="scss" scoped>
 .container-two {
-  width: 100%;
   height: 100%;
+  overflow-x: hidden;
   padding: 50px 0 50px 50px;
 
   .new-container {

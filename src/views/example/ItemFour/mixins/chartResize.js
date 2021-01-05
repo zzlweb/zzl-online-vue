@@ -1,4 +1,4 @@
-import echarts from 'echarts'
+import * as echarts from 'echarts'
 import _ from 'lodash'
 export default {
   data() {
@@ -24,6 +24,7 @@ export default {
   },
   mounted() {
     this.doms = [this.$refs.charts]
+    // console.log(this.doms, '123')
     this.initChart()
     window.addEventListener('resize', this.chartResize)
   },
