@@ -61,6 +61,12 @@ export const constantRoutes = [
         name: 'ItemOne',
         component: () => import('@/views/example/ItemOne/index'),
         meta: { title: 'D3效果', icon: 'el-icon-map-location' }
+      },
+      {
+        path: 'ItemFive',
+        name: 'ItemFive',
+        component: () => import('@/views/example/ItemFive/index'),
+        meta: { title: 'svg效果', icon: 'el-icon-magic-stick' }
       }
     ]
   },
