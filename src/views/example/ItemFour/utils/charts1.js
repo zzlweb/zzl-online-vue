@@ -78,11 +78,9 @@ function getlineChartOption(lineData) {
       },
       axisLabel: {
         margin: 10,
-        textStyle: {
-          fontSize: 12,
-          color: 'rgba(255,255,255,0.3)',
-          lineHeight: 14
-        }
+        fontSize: 12,
+        color: 'rgba(255,255,255,0.3)',
+        lineHeight: 14
       },
       data: lineData.axisData
     }],
@@ -102,10 +100,8 @@ function getlineChartOption(lineData) {
       },
       axisLabel: {
         margin: 10,
-        textStyle: {
-          fontSize: 12,
-          color: 'rgba(255,255,255,0.3)'
-        }
+        fontSize: 12,
+        color: 'rgba(255,255,255,0.3)'
       },
       splitLine: {
         type: 'dashed',
@@ -121,28 +117,22 @@ function getlineChartOption(lineData) {
       symbolSize: 0.01,
       sampling: 'average',
       lineStyle: {
-        normal: {
-          width: 2
-        }
+        width: 2
       },
       areaStyle: {
-        normal: {
-          // opacity: 0.32,
-          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-            offset: 0,
-            color: 'rgba(0,170,255,0.50)'
-          }, {
-            offset: 1,
-            color: 'rgba(0,170,255,0.00) '
-          }], false)
-        }
+        // opacity: 0.32,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+          offset: 0,
+          color: 'rgba(0,170,255,0.50)'
+        }, {
+          offset: 1,
+          color: 'rgba(0,170,255,0.00) '
+        }], false)
       },
       itemStyle: {
-        normal: {
-          color: '#ffffff',
-          borderColor: '#ffffff',
-          borderWidth: 2
-        }
+        color: '#ffffff',
+        borderColor: '#ffffff',
+        borderWidth: 2
       },
       data: lineData.reportData
     }, {
@@ -152,28 +142,21 @@ function getlineChartOption(lineData) {
       symbolSize: 0.01,
       sampling: 'average',
       lineStyle: {
-        normal: {
-          width: 2
-        }
+        width: 2
       },
       areaStyle: {
-        normal: {
-          // opacity: 0.4,
-          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-            offset: 0,
-            color: 'rgba(2,247,236,0.5)'
-          }, {
-            offset: 1,
-            color: 'rgba(2,247,236,0.15)'
-          }], false)
-        }
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+          offset: 0,
+          color: 'rgba(2,247,236,0.5)'
+        }, {
+          offset: 1,
+          color: 'rgba(2,247,236,0.15)'
+        }], false)
       },
       itemStyle: {
-        normal: {
-          color: '#01ECD5',
-          borderColor: '#01ECD5',
-          borderWidth: 2
-        }
+        color: '#01ECD5',
+        borderColor: '#01ECD5',
+        borderWidth: 2
       },
       data: lineData.imageData
     }]

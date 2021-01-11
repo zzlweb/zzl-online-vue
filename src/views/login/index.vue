@@ -146,11 +146,9 @@ export default {
 
 <style lang="scss" scoped>
 .login-page {
-  width: 100%;
   height: 100%;
   justify-content: center;
   align-items: center;
-  min-width: 1440px;
   overflow-x: auto;
   overflow-y: hidden;
   background-color: rgb(248, 248, 248);

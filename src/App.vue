@@ -4,7 +4,7 @@
 
     <div v-else class="flex-col resize-container">
       <img src="./assets/svg/warning.svg" alt="">
-      <div class="alert-text">设备不支持</div>
+      <div class="alert-text">设备暂不支持</div>
     </div>
   </div>
 </template>

@@ -79,11 +79,9 @@ export default {
             },
             axisLabel: {
               margin: 10,
-              textStyle: {
-                fontSize: 12,
-                color: 'rgba(255,255,255,0.3)',
-                lineHeight: 14
-              }
+              fontSize: 12,
+              color: 'rgba(255,255,255,0.3)',
+              lineHeight: 14
             },
             data: lineData.axisData
           }
@@ -102,10 +100,8 @@ export default {
             },
             axisLabel: {
               margin: 10,
-              textStyle: {
-                fontSize: 12,
-                color: 'rgba(255,255,255,0.3)'
-              }
+              fontSize: 12,
+              color: 'rgba(255,255,255,0.3)'
             },
             splitLine: {
               type: 'dashed',
@@ -132,16 +128,12 @@ export default {
             data: [6.7, 6, 10.3, 7.9, 7.3, 7, 5],
             sampling: 'average',
             lineStyle: {
-              normal: {
-                width: 1
-              }
+              width: 1
             },
             itemStyle: {
-              normal: {
-                color: '#D0BF60',
-                borderColor: '#D0BF60',
-                borderWidth: 1
-              }
+              color: '#D0BF60',
+              borderColor: '#D0BF60',
+              borderWidth: 1
             }
           },
           {
@@ -160,16 +152,12 @@ export default {
             data: [4, 5.2, 5.8, 4.5, 5.9, 3.8, 4],
             sampling: 'average',
             lineStyle: {
-              normal: {
-                width: 1
-              }
+              width: 1
             },
             itemStyle: {
-              normal: {
-                color: '#81E4FF',
-                borderColor: '#81E4FF',
-                borderWidth: 1
-              }
+              color: '#81E4FF',
+              borderColor: '#81E4FF',
+              borderWidth: 1
             }
           }
         ]
