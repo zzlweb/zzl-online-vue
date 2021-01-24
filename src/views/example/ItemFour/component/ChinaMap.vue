@@ -1,12 +1,10 @@
 <template>
-  <div class="map">
-    <div id="map-container" />
-  </div>
+  <div :class="className" :style="{ height: height, width: width}" />
 </template>
 
 <script>
-
-import echarts from 'echarts/lib/echarts'
+import resize from '../mixins/resize'
+import echarts from 'echarts'
 import 'echarts/map/js/china.js'
 
 // 省份地理坐标
@@ -136,7 +134,6 @@ var chinaDatas = [
     }
   ]
 ]
-//
 var datasa = [
   {
     name: '北京',
@@ -275,11 +272,11 @@ var convertData = function(data) {
     // 获取省份名称
     var fromCoord = chinaGeoCoordMap[dataItem[0].name]
     // 获取目标地地理坐标
-    var toCoord = [108.384366, 30.439702]
+    var toCoord = [121.4648, 31.2891]
     if (fromCoord && toCoord) {
       res.push({
         fromName: dataItem[0].name,
-        toName: '重庆',
+        toName: '上海',
         coords: [fromCoord, toCoord],
         // 省份数据
         value: dataItem[0].value,
@@ -307,14 +304,44 @@ var convertData = function(data) {
   }
   return res
 }
+
 export default {
+  mixins: [resize],
+  props: {
+    className: {
+      type: String,
+      default: 'map-container'
+    },
+    width: {
+      type: String,
+      default: '100%'
+    },
+    height: {
+      type: String,
+      default: '500px'
+    }
+  },
+  data() {
+    return {
+      myChart: null
+    }
+  },
   mounted() {
-    this.drawMap()
+    this.$nextTick(() => {
+      this.drawMap()
+    })
+  },
+  beforeDestroy() {
+    if (!this.myChart) {
+      return
+    }
+    this.myChart.dispose()
+    this.myChart = null
   },
   methods: {
     drawMap() {
       var series = []
-      const configData = [['重庆', chinaDatas]]
+      const configData = [['上海', chinaDatas]]
       configData.forEach(function(item, i) {
         series.push(
           {
@@ -381,7 +408,7 @@ export default {
                 // offset: [5, 0], //偏移设置
                 formatter: '{b}', // 圆环显示文字
                 textStyle: {
-                  color: '#fff',
+                  color: 'rgb(197,197,197)',
                   fontSize: '12px'
                 }
               }
@@ -455,12 +482,6 @@ export default {
             label: {
               normal: {
                 show: true
-              },
-              emphasis: {
-                show: false,
-                textStyle: {
-                  color: '#fff'
-                }
               }
             },
             roam: true,
@@ -533,22 +554,9 @@ export default {
         },
         series: series
       }
-      const myChart = echarts.init(document.getElementById('map-container'))
-      myChart.setOption(option)
+      this.myChart = echarts.init(this.$el)
+      this.myChart.setOption(option)
     }
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.map{
-  width: 100%;
-  height: 100%;
-
-  #map-container{
-    width: 800px;
-    height: 500px;
-    display: flex;
-  }
-}
-</style>

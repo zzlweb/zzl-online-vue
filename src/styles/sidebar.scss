@@ -76,7 +76,22 @@
       }
     }
 
-    .is-active>.el-submenu__title {
+    .submenu-title-noDropdown.is-active{
+      position: relative;
+      background-color: $menuHover !important;
+
+      &::after{
+        content: '';
+        position: absolute;
+        width: 3px;
+        background-color: $primary-color;
+        right: 0;
+        top: 0;
+        height: 100%;
+      }
+    }
+
+    &.is-active>.el-submenu__title {
       color: $subMenuActiveText !important;
     }
 
@@ -214,7 +229,7 @@
     }
 
     &::-webkit-scrollbar {
-      width: 6px;
+      width: 4px;
     }
 
     &::-webkit-scrollbar-thumb {

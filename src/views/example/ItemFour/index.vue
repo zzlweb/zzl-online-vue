@@ -1,9 +1,7 @@
 <template>
-  <div id="chartConainer" class="chart-container flex-col">
+  <div id="chartConainer" class="chart-container">
     <div class="item-container flex-row">
-      <div class="left-container fill-flex">
-        <div id="chart-box" />
-      </div>
+      <div class="left-container fill-flex felx-row"><ChartsOne class="fill-flex" /></div>
       <div class="right-container">
         <div class="right-pie-chart">
           <div class="center-info-container flex-col">
@@ -16,137 +14,39 @@
               <div class="bototm-value">263,780</div>
             </div>
           </div>
-          <div id="rightPieChart" class="chart-container" />
+          <charts-two />
         </div>
       </div>
     </div>
 
     <div class="flex-row chart-box-two">
-      <div class="item"><charts-one />
-      </div>
-      <div class="item"> <china-map /></div>
+      <div class="item fill-flex"><charts-three /></div>
+      <div class="item fill-flex"><china-map /></div>
     </div>
   </div>
 </template>
 
 <script>
-import * as echarts from 'echarts'
-import drawChart from './utils/charts1.js'
-import _ from 'lodash'
-import ChartsOne from './component/charts1'
+import ChartsThree from './component/chartsThree'
+import ChartsOne from './component/chartsOne'
+import ChartsTwo from './component/chartsTwo'
 import ChinaMap from './component/ChinaMap'
 export default {
   components: {
-    ChartsOne: ChartsOne,
-    ChinaMap: ChinaMap
-  },
-  // mixins: [chartResize],
-  data() {
-    return {
-      // 页面宽度
-      lineData: {
-        axisData: [
-          '10:00',
-          '10:30',
-          '11:00',
-          '11:30',
-          '12:00',
-          '12:30',
-          '13:00',
-          '13:30',
-          '14:00',
-          '14:30',
-          '15:00',
-          '15:30',
-          '16:00',
-          '16:30',
-          '17:00'
-        ],
-        reportData: [
-          36,
-          42,
-          32,
-          22,
-          42,
-          41,
-          52,
-          37,
-          42,
-          37,
-          28,
-          31,
-          41,
-          36,
-          56
-        ],
-        imageData: [34, 17, 21, 18, 16, 19, 7, 12, 14, 15, 7, 6, 12, 8, 38]
-      },
-      pieData: [
-        {
-          name: 'CT',
-          value: 78
-        },
-        {
-          name: 'MR',
-          value: 36
-        },
-        {
-          name: 'PET-CT',
-          value: 22
-        },
-        {
-          name: 'DR',
-          value: 95
-        },
-        {
-          name: 'RT',
-          value: 33
-        }
-      ]
-    }
-  },
-  mounted() {
-    const myChart = echarts.init(document.getElementById('chart-box'))
-    const pieChart = echarts.init(document.getElementById('rightPieChart'))
-
-    this.drawLine(myChart)
-    this.drawPieChart(pieChart)
-    this.handleReszie(myChart, pieChart)
-  },
-  methods: {
-    drawLine(myChart) {
-      // 绘制图表
-      const lineChartOption = drawChart.getlineChartOption(this.lineData)
-      myChart.setOption(lineChartOption)
-    },
-    drawPieChart(pieChart) {
-      const pieChartOption = drawChart.getpieChartOption(this.pieData)
-      pieChart.setOption(pieChartOption)
-    },
-    handleReszie(myChart, pieChart) {
-      let timer = null
-      window.addEventListener(
-        'resize',
-        _.throttle(() => {
-          if (timer) {
-            clearTimeout(timer)
-          }
-
-          timer = setTimeout(function() {
-            myChart.resize()
-            pieChart.resize()
-          }, 100)
-        })
-      )
-    }
+    ChartsThree,
+    ChinaMap,
+    ChartsOne,
+    ChartsTwo
   }
+
 }
 </script>
 
 <style lang="scss" scoped>
 .chart-container {
-  height: 100%;
+  min-height: calc(100vh - 50px);
   background-color: #23262b;
+  overflow: hidden;
 
   #rightPieChart {
     background: transparent;
@@ -154,17 +54,10 @@ export default {
 
   .item-container {
     height: 350px;
-    margin: 20px;
+    margin: 20px 20px ;
     background: url("../../../assets/images/chartImg/liuliangjiance-bg.png")
       no-repeat center;
     border-radius: 4px;
-
-    .left-container {
-      #chart-box {
-        width: 100%;
-        height: 100%;
-      }
-    }
 
     .right-pie-chart {
       flex: 0 0 390px;
@@ -219,12 +112,6 @@ export default {
           text-align: center;
         }
       }
-    }
-  }
-
-  .chart-box-two{
-    .item{
-      flex: 1;
     }
   }
 }
