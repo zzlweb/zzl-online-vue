@@ -5,7 +5,8 @@ const getDefaultState = () => {
   return {
     token: getToken(),
     name: '',
-    avatar: ''
+    avatar: '',
+    roles: []
   }
 }
 
@@ -23,6 +24,9 @@ const mutations = {
   },
   SET_AVATAR: (state, avatar) => {
     state.avatar = avatar
+  },
+  SET_ROLES: (state, roles) => {
+    state.roles = roles
   }
 }
 
@@ -43,19 +47,25 @@ const actions = {
   },
 
   // get user info
+
   getInfo({ commit, state }) {
     return new Promise((resolve, reject) => {
       getInfo(state.token).then(response => {
         const { data } = response
 
         if (!data) {
-          return reject('验证错误,请重新登录')
+          reject('验证错误,请重新登录')
         }
 
-        const { name, avatar } = data
-        // console.log(name, avatar)
-        commit('SET_NAME', name)
-        commit('SET_AVATAR', avatar)
+        const { roles } = data
+
+        // roles must be a non-empty array
+        if (!roles || roles.length <= 0) {
+          reject('角色不能为空')
+        }
+
+        commit('SET_ROLES', roles)
+
         resolve(data)
       }).catch(error => {
         reject(error)

@@ -69,7 +69,9 @@ export const constantRoutes = [
         meta: { title: 'svg效果', icon: 'el-icon-magic-stick' }
       }
     ]
-  },
+  }
+]
+export const asyncRoutes = [
 
   {
     path: '/form',
@@ -79,10 +81,9 @@ export const constantRoutes = [
     children: [{
       path: 'index',
       component: () => import('@/views/form/index'),
-      meta: { title: '表单', icon: 'form' }
+      meta: { title: '表单', icon: 'form', roles: ['admin'] }
     }]
   },
-
   { path: '*', redirect: '/404', hidden: true }
 ]
 
