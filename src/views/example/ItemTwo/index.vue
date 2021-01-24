@@ -61,34 +61,34 @@ export default {
       itemArr: [
         {
           id: 1,
-          url: require('@/assets/images/迪拜会议海报.png'),
-          title_one: '联影首秀Arab Health',
+          url: require('@/assets/images/drag1.jpg'),
+          title_one: 'XX首秀Arab Health',
           title_two:
-            '1月27-30日，全球u医疗器械行业顶级盛会之一Arab Health在迪拜拉开帷幕，来自60多个国家和地区的4000多家企业参与其中。联影首次携PET-CT、PET/MR、MR、CT、DR等全线产品参展。',
+            '1月27-30日，全球u医疗器械行业顶级盛会之一Arab Health在迪拜拉开帷幕，来自60多个国家和地区的4000多家企业参与其中。XX首次携PET-CT、PET/MR、MR、CT、DR等全线产品参展。',
           index: '01'
         },
         {
           id: 2,
-          url: require('@/assets/images/zhagenmeiguo.png'),
+          url: require('@/assets/images/drag2.jpg'),
           title_one: '中国“智”造扎根美国',
           title_two:
-            '2019年12月1-6日，联影医疗技术集团有限公司（以下简称“联影”）携全线产品及最新创新成果，亮相全球放射学界规模最大、最能代表未来技术趋势和行业发展方向的医学盛会——第8届RSNA展。',
+            '2019年12月1-6日，XX医疗技术集团有限公司（以下简称“XX”）携全线产品及最新创新成果，亮相全球放射学界规模最大、最能代表未来技术趋势和行业发展方向的医学盛会——第8届RSNA展。',
           index: '02'
         },
         {
           id: 3,
-          url: require('@/assets/images/华盛顿医学院.png'),
-          title_one: '联影首秀Arab Health',
+          url: require('@/assets/images/drag3.jpg'),
+          title_one: 'XX首秀Arab Health',
           title_two:
-            '1月27-30日，全球u医疗器械行业顶级盛会之一Arab Health在迪拜拉开帷幕，来自60多个国家和地区的4000多家企业参与其中。联影首次携PET-CT、PET/MR、MR、CT、DR等全线产品参展。',
+            '1月27-30日，全球u医疗器械行业顶级盛会之一Arab Health在迪拜拉开帷幕，来自60多个国家和地区的4000多家企业参与其中。XX首次携PET-CT、PET/MR、MR、CT、DR等全线产品参展。',
           index: '03'
         },
         {
           id: 4,
           url: require('@/assets/images/穿越雪线@2x.png'),
-          title_one: '联影首秀Arab Health',
+          title_one: 'XX首秀Arab Health',
           title_two:
-            '1月27-30日，全球u医疗器械行业顶级盛会之一Arab Health在迪拜拉开帷幕，来自60多个国家和地区的4000多家企业参与其中。联影首次携PET-CT、PET/MR、MR、CT、DR等全线产品参展。',
+            '1月27-30日，全球u医疗器械行业顶级盛会之一Arab Health在迪拜拉开帷幕，来自60多个国家和地区的4000多家企业参与其中。XX首次携PET-CT、PET/MR、MR、CT、DR等全线产品参展。',
           index: '04'
         }
       ]
@@ -194,7 +194,7 @@ export default {
 
         .img-container {
           img {
-            width: 640;
+            width: 640px;
             height: 360px;
           }
         }

@@ -3,7 +3,6 @@
     <div id="NetWork" class="title_container">
       <HeaderTitle>
         <template #BigTitle>全球网络</template>
-        <template #smallTitle>GLOBAL NETWORk</template>
       </HeaderTitle>
     </div>
 

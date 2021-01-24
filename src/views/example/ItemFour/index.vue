@@ -21,7 +21,11 @@
       </div>
     </div>
 
-    <chart-one />
+    <div class="flex-row chart-box-two">
+      <div class="item"><charts-one />
+      </div>
+      <div class="item"> <china-map /></div>
+    </div>
   </div>
 </template>
 
@@ -29,11 +33,12 @@
 import * as echarts from 'echarts'
 import drawChart from './utils/charts1.js'
 import _ from 'lodash'
-// import chartResize from './mixins/chartResize'
 import ChartsOne from './component/charts1'
+import ChinaMap from './component/ChinaMap'
 export default {
   components: {
-    'chart-one': ChartsOne
+    ChartsOne: ChartsOne,
+    ChinaMap: ChinaMap
   },
   // mixins: [chartResize],
   data() {
@@ -120,16 +125,19 @@ export default {
     },
     handleReszie(myChart, pieChart) {
       let timer = null
-      window.addEventListener('resize', _.throttle(() => {
-        if (timer) {
-          clearTimeout(timer)
-        }
+      window.addEventListener(
+        'resize',
+        _.throttle(() => {
+          if (timer) {
+            clearTimeout(timer)
+          }
 
-        timer = setTimeout(function() {
-          myChart.resize()
-          pieChart.resize()
-        }, 100)
-      }))
+          timer = setTimeout(function() {
+            myChart.resize()
+            pieChart.resize()
+          }, 100)
+        })
+      )
     }
   }
 }
@@ -211,6 +219,12 @@ export default {
           text-align: center;
         }
       }
+    }
+  }
+
+  .chart-box-two{
+    .item{
+      flex: 1;
     }
   }
 }

@@ -20,11 +20,11 @@ export default {
   },
   watch: {
     screenWidth(val) {
-      val < 1100 ? this.flag = false : this.flag = true
+      val < 1024 ? this.flag = false : this.flag = true
     }
   },
   mounted() {
-    if (this.screenWidth < 1100) {
+    if (this.screenWidth < 1024) {
       this.flag = false
     }
     window.addEventListener('resize', () => {

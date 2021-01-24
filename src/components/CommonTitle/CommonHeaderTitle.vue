@@ -47,6 +47,7 @@ export default {
       height: 64px;
       line-height: 64px;
       font-weight: bold;
+      z-index: 100;
     }
   }
 
