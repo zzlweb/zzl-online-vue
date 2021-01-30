@@ -61,27 +61,38 @@ export default {
 <style lang="scss" scoped>
 @import "~@/styles/variables.scss";
 ::v-deep .el-scrollbar {
-  border-right: 1px solid #eaeaea;
+  position: relative;
 
-  .el-submenu__title ,.submenu-title-noDropdown{
+  &::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    background-color: #eaeaea;
+    right: 0;
+    top: 0;
+    height: 100%;
+  }
+
+  .el-submenu__title,
+  .submenu-title-noDropdown {
     font-weight: bold;
   }
 
-  .el-submenu{
-    .el-menu-item.is-active{
+  .el-submenu {
+    .el-menu-item.is-active {
       position: relative;
 
-      &::after{
-        content: '';
+      &::after {
+        content: "";
         position: absolute;
-        width: 4px;
+        width: 2px;
         background-color: $primary-color;
         right: 0;
         top: 0;
         height: 100%;
       }
       // border-right: 4px solid $primary-color !important;
-      background: rgba(50,71,154,0.05) !important;
+      background: rgba(50, 71, 154, 0.05) !important;
     }
   }
 }

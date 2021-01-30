@@ -36,11 +36,11 @@ router.beforeEach(async(to, from, next) => {
           const accessRoutes = await store.dispatch('permission/generateRoutes', roles)
           // dynamically add accessible routes
           router.addRoutes(accessRoutes)
-          next()
+          next({ ...to, replace: true })
         } catch (error) {
           // remove token and go to login page to re-login
           await store.dispatch('user/resetToken')
-          Message.error(error || 'Has Error')
+          Message.error('请求失败' || 'Has Error')
           next(`/login?redirect=${to.path}`)
           NProgress.done()
         }

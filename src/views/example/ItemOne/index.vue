@@ -230,7 +230,7 @@ export default {
 
 <style lang="scss" scoped>
 .map-container {
-  overflow-x: auto;
+  overflow-x: hidden;
   overflow-y: hidden;
   height: calc( 100vh - 50px);
   position: relative;

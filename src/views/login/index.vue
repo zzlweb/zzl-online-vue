@@ -149,7 +149,7 @@ export default {
   height: 100%;
   justify-content: center;
   align-items: center;
-  overflow-x: auto;
+  overflow-x: hidden;
   overflow-y: hidden;
   background-color: rgb(248, 248, 248);
   .login-container {

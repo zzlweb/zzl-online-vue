@@ -63,7 +63,7 @@
     }
 
     .el-menu {
-      border: none;
+      border: none !important;
       height: 100%;
       width: 100% !important;
     }
@@ -229,7 +229,7 @@
     }
 
     &::-webkit-scrollbar {
-      width: 4px;
+      width: 2px;
     }
 
     &::-webkit-scrollbar-thumb {

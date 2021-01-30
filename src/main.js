@@ -13,6 +13,16 @@ import store from './store'
 import router from './router'
 import '@/icons' // icon
 import '@/permission' // permission control
+import hl from 'highlight.js' // 导入代码高亮文件
+import 'highlight.js/styles/a11y-dark.css' // 导入代码高亮样式
+
+// 自定义一个代码高亮指令
+Vue.directive('highlight', function(el) {
+  const blocks = el.querySelectorAll('pre code')
+  blocks.forEach((block) => {
+    hl.highlightBlock(block)
+  })
+})
 
 if (process.env.NODE_ENV === 'production') {
   const { mockXHR } = require('../mock')

@@ -72,7 +72,6 @@ export const constantRoutes = [
   }
 ]
 export const asyncRoutes = [
-
   {
     path: '/form',
     name: 'form',
