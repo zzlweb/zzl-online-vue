@@ -145,3 +145,12 @@ div:focus {
     }
   }
 }
+
+/*--------------el-tooltip--------------------*/
+.el-tooltip__popper.is-light{
+  border: 1px solid #ccc;
+}
+
+.el-tooltip__popper.is-light[x-placement^=bottom] .popper__arrow{
+  border-bottom-color: #ccc;
+}

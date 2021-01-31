@@ -4,7 +4,7 @@
 
 <script>
 import AMap from 'AMap'
-import Between from './utils/between.js'
+// import Between from './utils/between.js'
 
 export default {
   data() {
@@ -242,7 +242,7 @@ export default {
     initMap() {
       this.map = new AMap.Map('map-container', {
         mapStyle: 'amap://styles/e8bdcdb020c0a0e6c1f239fa67629827', // 设置地图的显示样式
-        zoom: 14, // 设置缩放等级
+        zoom: 12, // 设置缩放等级
         pitch: 75, // 地图俯仰角度
         center: [121.499718, 31.239703], // 设置缩放中心
         viewMode: '3D', // 设置地图模式
@@ -263,7 +263,7 @@ export default {
         // console.log('地图加载完成！')
         this.generateMeshLine(this.pointArr)
         this.getPoint()
-        this.startRotationAnimation()
+        // this.startRotationAnimation()
       })
     },
     // 绘制点标记
@@ -424,8 +424,8 @@ export default {
               height,
               minHeight
             )[n]
-            // pointsGeo.pointSizes.push(30);
-            // pointsGeo.vertexColors.push(0, 0.209, 0.099, 0.087);
+            pointsGeo.pointSizes.push(30)
+            pointsGeo.vertexColors.push(0, 0.209, 0.099, 0.087)
             points3D.needUpdate = true
             points3D.reDraw()
           }
@@ -487,30 +487,30 @@ export default {
       }
 
       return height
-    },
+    }
 
     // 设置旋转
-    startRotationAnimation() {
-      new Between(0, 360)
-        .time(180000)
-        // .easing(Between.Easing.Cubic.InOut)
-        .loop('repeat')
-        .on('update', (v, { times }) => {
-          this.changeRotation(v.toFixed(2))
-        })
-        .on('start', () => {
-          // console.log('start')
-        })
-        .on('complete', () => {
-          // console.log('end 移动')
-        })
-    },
+    // startRotationAnimation() {
+    //   new Between(0, 360)
+    //     .time(180000)
+    //     // .easing(Between.Easing.Cubic.InOut)
+    //     .loop('repeat')
+    //     .on('update', (v, { times }) => {
+    //       this.changeRotation(v.toFixed(2))
+    //     })
+    //     .on('start', () => {
+    //       // console.log('start')
+    //     })
+    //     .on('complete', () => {
+    //       // console.log('end 移动')
+    //     })
+    // },
 
-    changeRotation(x) {
-      // map.setZoomAndCenter(17.5, [121.499719,31.239621]);
-      // console.log(x)
-      this.map.setRotation(x)
-    }
+    // changeRotation(x) {
+    //   // map.setZoomAndCenter(17.5, [121.499719,31.239621]);
+    //   // console.log(x)
+    //   this.map.setRotation(x)
+    // }
   }
 }
 </script>
@@ -520,7 +520,7 @@ export default {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: calc(100vh - 50px);
+  height:400px;
 }
 
 .amap-logo img {
