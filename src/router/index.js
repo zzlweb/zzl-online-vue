@@ -80,7 +80,7 @@ export const asyncRoutes = [
     children: [{
       path: 'index',
       component: () => import('@/views/form/index'),
-      meta: { title: '表单', icon: 'form', roles: ['admin'] }
+      meta: { title: '表格', icon: 'form', roles: ['admin'] }
     }]
   },
   { path: '*', redirect: '/404', hidden: true }

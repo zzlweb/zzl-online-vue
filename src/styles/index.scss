@@ -1,9 +1,9 @@
-@import './variables.scss';
-@import './mixin.scss';
-@import './transition.scss';
-@import './element-ui.scss';
-@import './sidebar.scss';
-@import './base.scss';
+@import "./variables.scss";
+@import "./mixin.scss";
+@import "./transition.scss";
+@import "./element-ui.scss";
+@import "./sidebar.scss";
+@import "./base.scss";
 
 body {
   height: 100%;
@@ -67,10 +67,10 @@ div:focus {
 
 // 公共样式
 // ---el-breadcrumb---
-.el-breadcrumb__inner a:hover, .el-breadcrumb__inner.is-link:hover{
+.el-breadcrumb__inner a:hover,
+.el-breadcrumb__inner.is-link:hover {
   color: $primary-color;
 }
-
 
 /*--- custom-tooltip   ----*/
 .custom-tooltip {
@@ -79,9 +79,8 @@ div:focus {
   overflow: hidden;
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.85);
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.30);
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.3);
-
 
   .time-title {
     height: 40px;
@@ -89,7 +88,7 @@ div:focus {
     padding-left: 10px;
     line-height: 40px;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.50);
+    color: rgba(255, 255, 255, 0.5);
   }
 
   .bottom-img-container {
@@ -116,7 +115,7 @@ div:focus {
 
         .series-value {
           font-size: 14px;
-          color: #FFFFFF;
+          color: #ffffff;
           padding-left: 20px;
           font-weight: bold;
         }
@@ -126,20 +125,20 @@ div:focus {
 }
 
 /*-----------el-dropdown-menu --------------*/
-.el-dropdown-menu{
+.el-dropdown-menu {
   padding: 0;
-  .el-dropdown-menu__item{
+  .el-dropdown-menu__item {
     line-height: 36px;
-    &:hover{
+    &:hover {
       background-color: $menuHover;
-      color:$menuActiveText;
+      color: $menuActiveText;
     }
   }
-  .el-dropdown-menu__item--divided{
+  .el-dropdown-menu__item--divided {
     margin-top: 0px;
     border-top: none;
 
-    &::before{
+    &::before {
       height: 1px;
       border-top: 1px solid #f5f5f5;
     }
@@ -147,10 +146,74 @@ div:focus {
 }
 
 /*--------------el-tooltip--------------------*/
-.el-tooltip__popper.is-light{
+.el-tooltip__popper.is-light {
   border: 1px solid #ccc;
 }
 
-.el-tooltip__popper.is-light[x-placement^=bottom] .popper__arrow{
+.el-tooltip__popper.is-light[x-placement^="bottom"] .popper__arrow {
   border-bottom-color: #ccc;
+}
+
+/*--------------el-table--------------------*/
+.el-table--striped .el-table__body tr.el-table__row--striped td {
+  background-color: rgb(246, 248, 251);
+}
+.el-checkbox__input.is-indeterminate .el-checkbox__inner{
+  background-color: #fff;
+  border: 1px solid #DCDFE6;
+}
+
+/*--------------el-pagination--------------------*/
+.el-pagination {
+  & span:not([class*="suffix"]),
+  & button {
+    line-height: 30px;
+    min-width: 30px;
+  }
+
+  & button:not(:disabled):hover {
+    background: rgba(95, 117, 230, 0.05);
+    border: 1px solid #32479a;
+  }
+
+  .btn-prev,
+  .btn-next {
+    background: #ffffff;
+    border: 1px solid #dadce6;
+    border-radius: 2px;
+    border-radius: 2px;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+  }
+
+  & .el-pager {
+    li {
+      height: 30px;
+      line-height: 30px;
+      background: #ffffff;
+      border: 1px solid #dadce6;
+      min-width: 30px;
+      margin: 0 0 0 10px;
+      padding: 0;
+      color: #1f2127;
+      text-align: center;
+      font-weight: normal;
+
+      &:last-child {
+        margin-right: 10px;
+      }
+
+      &.active {
+        background: rgba(95, 117, 230, 0.05);
+        border: 1px solid #32479a;
+        color: #32479a;
+        font-weight: bold;
+      }
+
+      &.active + li{
+        border-left: 1px solid #dadce6;
+      }
+    }
+  }
 }
