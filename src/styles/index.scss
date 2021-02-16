@@ -163,6 +163,10 @@ div:focus {
   border: 1px solid #DCDFE6;
 }
 
+.el-table th, .el-table td{
+  padding: 8px 0 !important;
+}
+
 /*--------------el-pagination--------------------*/
 .el-pagination {
   & span:not([class*="suffix"]),

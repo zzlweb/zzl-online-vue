@@ -3,9 +3,7 @@
     <div class="home">
       <el-row>
         <el-col :xs="24" :sm="24" :lg="24">
-          <div class="panel-item">
-            345
-          </div>
+          <div class="panel-item">345</div>
         </el-col>
       </el-row>
       <el-row :gutter="32">
@@ -23,12 +21,9 @@
 <script>
 export default {
   name: 'Dashboard',
-  components: {
-  },
+  components: {},
   data() {
-    return {
-
-    }
+    return {}
   }
 }
 </script>
@@ -44,7 +39,8 @@ export default {
 
   .panel-box {
     height: 400px;
-    border: 1px solid#d8dce5;
+    box-shadow: 0px 0px 1px -1px rgba(0, 0, 0, 0.2),
+      0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   }
 }
 </style>

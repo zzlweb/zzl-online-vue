@@ -114,5 +114,11 @@ export default {
       }
     }
   }
+
+  .chart-box-two{
+    .item{
+      overflow: hidden;
+    }
+  }
 }
 </style>

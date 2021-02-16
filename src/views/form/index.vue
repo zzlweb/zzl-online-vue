@@ -1,15 +1,20 @@
 <template>
   <div class="app-container">
-    <el-form ref="formInline" :inline="false" :model="formInline" class="demo-form-inline" hide-required-asterisk>
+    <el-form
+      ref="formInline"
+      :inline="false"
+      :model="formInline"
+      class="demo-form-inline"
+      hide-required-asterisk
+    >
       <el-row :gutter="30">
         <el-col :sm="6" :xs="12">
           <el-form-item
             label="来源医院"
             prop="hospital"
-
             :rules="[
-              { required: true, message: '医院名称不能为空'},
-              { type: 'string', message: '医院名称错误'}
+              { required: true, message: '医院名称不能为空' },
+              { type: 'string', message: '医院名称错误' },
             ]"
           >
             <el-input v-model="formInline.hospital" placeholder="医院名称" />
@@ -20,8 +25,8 @@
             label="来源部门"
             prop="apart"
             :rules="[
-              { required: true, message: '来源部门不能为空'},
-              { type: 'string', message: '来源部门错误'}
+              { required: true, message: '来源部门不能为空' },
+              { type: 'string', message: '来源部门错误' },
             ]"
           >
             <el-input v-model="formInline.apart" placeholder="审批部门" />
@@ -32,8 +37,8 @@
             label="来源医生"
             prop="user"
             :rules="[
-              { required: true, message: '来源医生不能为空'},
-              { type: 'string', message: '来源医生错误'}
+              { required: true, message: '来源医生不能为空' },
+              { type: 'string', message: '来源医生错误' },
             ]"
           >
             <el-input v-model="formInline.user" placeholder="审批医生" />
@@ -65,7 +70,10 @@
         </el-col>
         <el-col :sm="6" :xs="12" class="button-apart">
           <el-form-item class="button-apart">
-            <el-button type="primary" @click="submitForm('formInline')">查询</el-button>
+            <el-button
+              type="primary"
+              @click="submitForm('formInline')"
+            >查询</el-button>
             <el-button @click="resetForm('formInline')">重置</el-button>
           </el-form-item>
         </el-col>
@@ -164,6 +172,8 @@
 </template>
 
 <script>
+import { Message } from 'element-ui'
+
 export default {
   data() {
     return {
@@ -335,7 +345,12 @@ export default {
           // alert('submit!')
         } else {
           for (const key in msg) {
-            alert(msg[key][0].message)
+            this.$message.closeAll()
+            Message({
+              message: msg[key][0].message,
+              type: 'error',
+              duration: 3 * 1000
+            })
             return false
           }
         }
@@ -359,18 +374,18 @@ export default {
   align-items: center;
 }
 
-.demo-form-inline{
+.demo-form-inline {
   margin-bottom: 30px;
 }
 
-.button-apart{
+.button-apart {
   height: 80px;
 
-  ::v-deep .el-form-item__content{
+  ::v-deep .el-form-item__content {
     margin-top: 40px;
   }
 
-  .el-button{
+  .el-button {
     width: 90px;
   }
 }
