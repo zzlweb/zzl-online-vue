@@ -15,18 +15,6 @@
           <copy-code :code="code2" />
         </div>
       </el-col>
-      <el-col :xs="24" :sm="24" :lg="24">
-        <div class="panel-box flex-col">
-          <div class="panel-content flex-row">123</div>
-          <copy-code :code="code2" />
-        </div>
-      </el-col>
-      <el-col :xs="24" :sm="24" :lg="24">
-        <div class="panel-box flex-col">
-          <div class="panel-content flex-row">123</div>
-          <copy-code :code="code2" />
-        </div>
-      </el-col>
     </el-row>
   </div>
 </template>
