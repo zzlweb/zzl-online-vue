@@ -63,6 +63,7 @@
 <script>
 import { validUsername } from '@/utils/validate'
 import svgDesign from './component/svg'
+import { Message } from 'element-ui'
 
 export default {
   name: 'Login',
@@ -72,7 +73,7 @@ export default {
   data() {
     const validateUsername = (rule, value, callback) => {
       if (!validUsername(value)) {
-        callback(new Error('请输入用户名'))
+        callback(new Error('请输入正确用户名'))
       } else {
         callback()
       }
@@ -135,7 +136,12 @@ export default {
               this.loading = false
             })
         } else {
-          console.log('登录失败')
+          this.$message.closeAll()
+          Message({
+            message: '登陆失败',
+            type: 'error',
+            duration: 3 * 1000
+          })
           return false
         }
       })
@@ -241,7 +247,7 @@ export default {
           }
         }
 
-        .el-button{
+        .el-button {
           height: 60px;
           line-height: 60px;
           text-align: center;
@@ -250,7 +256,7 @@ export default {
           margin: 80px 0 0 56px;
           width: 270px !important;
           padding: 0;
-          background-color: #32479A;
+          background-color: #32479a;
           border-radius: 2px;
         }
       }
