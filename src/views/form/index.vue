@@ -8,7 +8,7 @@
       hide-required-asterisk
     >
       <el-row :gutter="30">
-        <el-col :sm="6" :xs="12">
+        <el-col :span="6">
           <el-form-item
             label="来源医院"
             prop="hospital"
@@ -20,7 +20,7 @@
             <el-input v-model="formInline.hospital" placeholder="医院名称" />
           </el-form-item>
         </el-col>
-        <el-col :sm="6" :xs="12">
+        <el-col :span="6">
           <el-form-item
             label="来源部门"
             prop="apart"
@@ -32,7 +32,7 @@
             <el-input v-model="formInline.apart" placeholder="审批部门" />
           </el-form-item>
         </el-col>
-        <el-col :sm="6" :xs="12">
+        <el-col :span="6">
           <el-form-item
             label="来源医生"
             prop="user"
@@ -44,7 +44,7 @@
             <el-input v-model="formInline.user" placeholder="审批医生" />
           </el-form-item>
         </el-col>
-        <el-col :sm="6" :xs="12">
+        <el-col :span="6">
           <el-form-item label="授权时间">
             <el-date-picker
               v-model="formInline.Time1"
@@ -57,7 +57,7 @@
         </el-col>
       </el-row>
       <el-row :gutter="30">
-        <el-col :sm="6" :xs="12">
+        <el-col :span="6">
           <el-form-item label="申请时间">
             <el-date-picker
               v-model="formInline.Time2"
@@ -68,7 +68,7 @@
             />
           </el-form-item>
         </el-col>
-        <el-col :sm="6" :xs="12" class="button-apart">
+        <el-col :span="6" class="button-apart">
           <el-form-item class="button-apart">
             <el-button
               type="primary"
@@ -388,6 +388,10 @@ export default {
   .el-button {
     width: 90px;
   }
+}
+
+.el-date-editor{
+  display: flex;
 }
 </style>
 
