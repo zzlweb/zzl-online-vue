@@ -1,11 +1,6 @@
 <template>
   <div id="app">
-    <router-view v-if="flag" />
-
-    <div v-else class="flex-col resize-container">
-      <img src="./assets/svg/warning.svg" alt="">
-      <div class="alert-text">设备暂不支持</div>
-    </div>
+    <router-view />
   </div>
 </template>
 

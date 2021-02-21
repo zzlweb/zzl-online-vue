@@ -391,7 +391,7 @@ export default {
 }
 
 .el-date-editor{
-  display: flex;
+  width: 100%;
 }
 </style>
 
