@@ -1,6 +1,9 @@
 <template>
   <div class="home-container">
     <div class="home">
+      <div class="gitConer-container">
+        <GithubCorner />
+      </div>
       <el-row>
         <el-col :xs="24" :sm="24" :lg="24">
           <div class="panel-item"><IndexOne /></div>
@@ -22,12 +25,14 @@
 import SvgTwo from './components/index2.vue'
 import IndexOne from './components/index1.vue'
 import ClockThree from './components/index3.vue'
+import GithubCorner from './components/GithubCorner'
 export default {
   name: 'Dashboard',
   components: {
     SvgTwo,
     ClockThree,
-    IndexOne
+    IndexOne,
+    GithubCorner
   },
   data() {
     return {}
@@ -39,6 +44,14 @@ export default {
 .home-container {
   padding: 20px;
   height: 100%;
+  position: relative;
+
+  .gitConer-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
   .panel-item {
     height: 400px;
     margin-bottom: 30px;
