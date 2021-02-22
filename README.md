@@ -12,3 +12,6 @@
 1.  yarn
 2.  yarn dev
 3.  yarn build:pro
+
+#### 预览项目
+[预览地址](https://z2736815971.gitee.io/interview-use)
