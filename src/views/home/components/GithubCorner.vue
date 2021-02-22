@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <a
-      href="https://github.com/vue3/vue3-News"
+      href="https://github.com/zzlweb/zzl-online-vue"
       class="github-corner"
       aria-label="View source on GitHub"
     >
