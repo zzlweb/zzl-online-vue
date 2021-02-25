@@ -4,8 +4,10 @@
 用于展示前端实现效果。
 
 #### 软件架构
-软件架构说明
 
+- vue2 + vue-elementUI + axios
+- D3 + ecahrts 
+- svg animate 
 
 #### 安装教程
 
